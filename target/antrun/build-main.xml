@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <mkdir dir="/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/target/SparkMonitor"/>
+  <copy todir="/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/target/SparkMonitor">
+    <fileset includes="monitor.xml" dir="src/main/resources/conf"/>
+    <fileset includes="config.yml" dir="src/main/resources/conf"/>
+  </copy>
+  <copy todir="/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/target/SparkMonitor">
+    <fileset includes="apache-spark-monitoring-extension.jar" dir="/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/target"/>
+  </copy>
+  <zip destfile="/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/target/SparkMonitor-1.0-SNAPSHOT.zip">
+    <zipfileset prefix="SparkMonitor/" filemode="755" dir="/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/target/SparkMonitor"/>
+  </zip>
+  <delete dir="/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/target/SparkMonitor"/>
+</target>
+</project>
