@@ -11,11 +11,12 @@ servers:
      name: "Spark Master"
 
 
-numberOfThreads: 25
+numberOfThreads: 5
+
+
 
 metrics:
-   - jobs:
-      include:
+     jobs:
         - numTasks: "Number of tasks in the application"
         - numActiveTasks: "Number of active tasks in the application"
         - numCompletedTasks: "Number of completed tasks in the application"
@@ -26,8 +27,7 @@ metrics:
         - numSkippedStages: "Number of completed stages"
         - numFailedStages: "Number of failed stages"
 
-    - stages:
-       include:
+     stages:
         - numActiveTasks: "Number of active tasks in the application's stages"
         - numCompleteTasks: "Number of complete tasks in the application's stages"
         - numFailedTasks: "Number of failed tasks in the application's stages"
@@ -43,21 +43,16 @@ metrics:
         - memoryBytesSpilled: "Number of bytes spilled to disk in the application's stages"
         - diskBytesSpilled: "Max size on disk of the spilled bytes in the application's stages"
 
-      - executors:
-         include:
-          - rddBlocks: "Number of persisted RDD blocks in the application's executors"
-          - memoryUsed: "Amount of memory used for cached RDDs in the application's executors"
-          - diskUsed: "Amount of disk space used by persisted RDDs in the application's executors"
-          - activeTasks: "Number of active tasks in the application's executors"
-          - failedTasks: "Number of failed tasks in the application's executors"
-          - completedTasks: "Number of completed tasks in the application's executors"
-          - totalTasks: "Total number of tasks in the application's executors"
-          - totalDuration: "Time spent by the application's executors executing tasks (ms)"
-          - totalInputBytes: "Total number of input bytes in the application's executors"
-          - totalShuffleRead: "Total number of bytes read during a shuffle in the application's executors"
-          - totalShuffleWrite: "Total number of shuffled bytes in the application's executors"
-          - maxMemory: "Maximum memory available for caching RDD blocks in the application's executors"
-
-
-
-
+     executors:
+        - rddBlocks: "Number of persisted RDD blocks in the application's executors"
+        - memoryUsed: "Amount of memory used for cached RDDs in the application's executors"
+        - diskUsed: "Amount of disk space used by persisted RDDs in the application's executors"
+        - activeTasks: "Number of active tasks in the application's executors"
+        - failedTasks: "Number of failed tasks in the application's executors"
+        - completedTasks: "Number of completed tasks in the application's executors"
+        - totalTasks: "Total number of tasks in the application's executors"
+        - totalDuration: "Time spent by the application's executors executing tasks (ms)"
+        - totalInputBytes: "Total number of input bytes in the application's executors"
+        - totalShuffleRead: "Total number of bytes read during a shuffle in the application's executors"
+        - totalShuffleWrite: "Total number of shuffled bytes in the application's executors"
+        - maxMemory: "Maximum memory available for caching RDD blocks in the application's executors"

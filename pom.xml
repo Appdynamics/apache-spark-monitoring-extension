@@ -11,7 +11,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
-        <target.dir>${project.build.directory}/SparkMonitor</target.dir>
+        <target.dir>${project.build.directory}/com.appdynamics.extensions.spark.SparkMonitor</target.dir>
     </properties>
 
     <dependencies>
@@ -19,7 +19,7 @@
             <groupId>com.appdynamics</groupId>
             <artifactId>machine-agent</artifactId>
             <version>3.7.11</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>com.appdynamics</groupId>
@@ -29,8 +29,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.4</version>
-            <scope>provided</scope>
+            <version>2.5</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -43,6 +42,16 @@
             <artifactId>mockito-all</artifactId>
             <version>1.9.5</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.1.1</version>
         </dependency>
     </dependencies>
     <build>
@@ -123,7 +132,7 @@
                                     <fileset dir="${build.directory}" includes="${project.artifactId}.${project.packaging}"/>
                                 </copy>
                                 <zip destfile="${target.dir}-${project.version}.zip">
-                                    <zipfileset dir="${target.dir}" filemode="755" prefix="SparkMonitor/"/>
+                                    <zipfileset dir="${target.dir}" filemode="755" prefix="com.appdynamics.extensions.spark.SparkMonitor/"/>
                                 </zip>
                                 <delete dir="${target.dir}"/>
                             </target>

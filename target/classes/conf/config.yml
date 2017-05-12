@@ -1,0 +1,58 @@
+#prefix used to show up metrics in AppDynamics
+#metricPrefix: "Custom Metrics|Solr"
+
+#This will create it in specific Tier. Replace <TIER_ID>
+metricPrefix: "Server|Component:<COMPONENT_ID>|Custom Metrics|Spark Monitor|"
+
+#Add your spark history servers here
+servers:
+   - host: "localhost"
+     port: 18080
+     name: "Spark Master"
+
+
+numberOfThreads: 5
+
+
+
+metrics:
+     jobs:
+        - numTasks: "Number of tasks in the application"
+        - numActiveTasks: "Number of active tasks in the application"
+        - numCompletedTasks: "Number of completed tasks in the application"
+        - numSkippedTasks: "Number of skipped tasks"
+        - numFailedTasks: "Number of failed tasks"
+        - numActiveStages: "Number of active stages"
+        - numCompletedStages: "Number of completed stages"
+        - numSkippedStages: "Number of completed stages"
+        - numFailedStages: "Number of failed stages"
+
+     stages:
+        - numActiveTasks: "Number of active tasks in the application's stages"
+        - numCompleteTasks: "Number of complete tasks in the application's stages"
+        - numFailedTasks: "Number of failed tasks in the application's stages"
+        - executorRunTime: "Time spent by executor in the application's stages (ms)"
+        - inputBytes: "Input bytes in the application's stages"
+        - inputRecords: "Input records in the application's stages"
+        - outputBytes: "Output bytes in the application's stages"
+        - outputRecords: "Output records in the application's stages"
+        - shuffleReadBytes: "Number of bytes read during a shuffle in the application's stages"
+        - shuffleReadRecords: "Number of records read during a shuffle in the application's stages"
+        - shuffleWriteBytes: "Number of bytes written during a shuffle in an application's stages"
+        - shuffleWriteRecords: "Number of shuffled records in the application's stages"
+        - memoryBytesSpilled: "Number of bytes spilled to disk in the application's stages"
+        - diskBytesSpilled: "Max size on disk of the spilled bytes in the application's stages"
+
+     executors:
+        - rddBlocks: "Number of persisted RDD blocks in the application's executors"
+        - memoryUsed: "Amount of memory used for cached RDDs in the application's executors"
+        - diskUsed: "Amount of disk space used by persisted RDDs in the application's executors"
+        - activeTasks: "Number of active tasks in the application's executors"
+        - failedTasks: "Number of failed tasks in the application's executors"
+        - completedTasks: "Number of completed tasks in the application's executors"
+        - totalTasks: "Total number of tasks in the application's executors"
+        - totalDuration: "Time spent by the application's executors executing tasks (ms)"
+        - totalInputBytes: "Total number of input bytes in the application's executors"
+        - totalShuffleRead: "Total number of bytes read during a shuffle in the application's executors"
+        - totalShuffleWrite: "Total number of shuffled bytes in the application's executors"
+        - maxMemory: "Maximum memory available for caching RDD blocks in the application's executors"
