@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ec12c26-0791-4b84-90cf-4e738ea88700" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/SparkMonitorTask.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/SparkMonitorTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/helpers/SparkUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/helpers/SparkUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/JobMetrics.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/JobMetrics.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricProperties.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/SparkUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/SparkUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/RDDMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/RDDMetrics.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/conf/config.yml" afterPath="$PROJECT_DIR$/src/main/resources/conf/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/conf/config.yml" afterPath="$PROJECT_DIR$/target/classes/conf/config.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,8 +20,8 @@
             <file leaf-file-name="JobMetrics.java" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="106">
-                    <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+                  <state relative-caret-position="421">
+                    <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
                     <folding>
                       <element signature="imports" expanded="true" />
                     </folding>
@@ -53,11 +37,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SparkStats.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SparkStats.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkStats.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetricProperties.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -99,16 +93,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparkMonitor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="39" column="85" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SparkUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/SparkUtils.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -121,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparkMonitorTask.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SparkMonitorTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="348">
+              <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -161,7 +145,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="451">
-              <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+              <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -675,13 +659,13 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18499218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18499218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3387978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3387978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -727,16 +711,16 @@
           <option name="timeStamp" value="74" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java</url>
           <line>48</line>
           <properties />
           <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java</url>
+          <line>61</line>
+          <properties />
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -749,7 +733,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="80" />
+      <option name="time" value="81" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -840,43 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#391#392#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#532#533#0" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#617#618#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
-            <element signature="e#741#742#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#898#899#0" expanded="true" />
-            <element signature="e#935#936#0" expanded="true" />
-            <element signature="e#995#996#0" expanded="true" />
-            <element signature="e#1047#1048#0" expanded="true" />
-            <element signature="e#1091#1092#0" expanded="true" />
-            <element signature="e#1131#1132#0" expanded="true" />
-            <element signature="e#1197#1198#0" expanded="true" />
-            <element signature="e#1255#1256#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1421#1422#0" expanded="true" />
-            <element signature="e#1473#1474#0" expanded="true" />
-            <element signature="e#1517#1518#0" expanded="true" />
-            <element signature="e#1553#1554#0" expanded="true" />
-            <element signature="e#1586#1587#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/machine-agent/3.7.11/machine-agent-3.7.11.jar!/com/singularity/ee/agent/systemagent/api/MetricWriter.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -933,20 +880,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
-          <caret line="41" column="27" lean-forward="false" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+          <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -963,8 +908,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="421">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -986,6 +931,16 @@
         <state relative-caret-position="345">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

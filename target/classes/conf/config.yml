@@ -23,20 +23,20 @@ metrics:
      jobs:
         - numTasks:
             alias: "Number of tasks in the application"
-            multiplier: "2"
+            multiplier: "2.5"
             cluster: "INDIVIDUAL"
             aggregation: "AVERAGE"
             time: "SUM"
         - numActiveTasks:
             alias: "Number of active tasks in the application"
-            multiplier: "2"
+            multiplier: "2.5"
             cluster: "COLLECTIVE"
             aggregation: "OBSERVATION"
             time: "CURRENT"
         - numCompletedTasks:
             alias: "Number of completed tasks in the application"
-            multiplier: "2"
+            multiplier: "2.5"
             cluster: "SUM"
         - numSkippedTasks:
             alias: "Number of skipped tasks"
-            multiplier: "1"
+            multiplier: "1.0"
