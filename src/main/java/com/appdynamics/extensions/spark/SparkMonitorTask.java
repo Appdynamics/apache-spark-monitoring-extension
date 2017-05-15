@@ -58,7 +58,7 @@ public class SparkMonitorTask implements Runnable {
             BigDecimal metricValue = metric.getValue();
             if(metricOverrides.containsKey(metricName)) {
                 MetricProperties propertiesForCurrentMetric = metricOverrides.get(metricName);
-                metricPath = metricPrefix + "|" + metricName;
+                metricPath = metricPrefix + "|" + propertiesForCurrentMetric.getAlias();
                 metricValue = metric.getValue().multiply(new BigDecimal(propertiesForCurrentMetric.getMultiplier()));
                 aggregationType = propertiesForCurrentMetric.getAggregationType();
                 clusterRollupType = propertiesForCurrentMetric.getClusterRollupType();

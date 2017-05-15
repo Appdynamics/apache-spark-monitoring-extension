@@ -18,6 +18,7 @@ import java.util.Map;
 class ExecutorMetrics {
     private static final Logger logger = LoggerFactory.getLogger(ExecutorMetrics.class);
     private static final String METRIC_SEPARATOR = "|";
+    private static final String ENTITY_TYPE = "EXECUTORS";
     private String applicationName;
     private List<JsonNode> executorsFromApplication;
     private List<Map> executorMetricsFromConfig;
@@ -29,21 +30,24 @@ class ExecutorMetrics {
     }
 
     Map<String, BigDecimal> populateMetrics() throws IOException {
-        if (!isValidationSuccessful()) {
-            return null;
+        if (!SparkUtils.isValidationSuccessful(executorMetricsFromConfig, executorsFromApplication, ENTITY_TYPE)) {
+            return Maps.newHashMap();
         }
-
         Map<String, BigDecimal> executorMetrics = Maps.newHashMap();
         for (JsonNode executor : executorsFromApplication) {
             String executorId = executor.findValue("id").asText();
-            String baseExecutorMetricPath = METRIC_SEPARATOR + "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Executors" + METRIC_SEPARATOR + executorId + METRIC_SEPARATOR;
+            String currentExecutorMetricPath = "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Executors" + METRIC_SEPARATOR + executorId + METRIC_SEPARATOR;
             logger.info("Fetching metrics for executor :" + executorId + " in application: " + applicationName);
             for (Map metric : executorMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
-                if (executor.has(entry.getKey())) {
-                    executorMetrics.put(baseExecutorMetricPath + entry.getValue(), SparkUtils.convertDoubleToBigDecimal(executor.findValue(entry.getKey()).asDouble()));
+                String metricName = entry.getKey();
+                if (executor.has(metricName)) {
+                    executorMetrics.put(currentExecutorMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(executor.findValue(metricName).asDouble()));
+                    if(entry.getValue() != null) {
+                        MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentExecutorMetricPath);
+                    }
                 } else {
-                    logger.debug("Metric :" + entry.getKey() + " not found for job : " + executorId + ". Please verify whether correct metric names have been entered in the config.yml");
+                    logger.debug("Metric :" + metricName + " not found for executor : " + executorId + ". Please verify whether correct metric names have been entered in the config.yml");
                 }
             }
         }

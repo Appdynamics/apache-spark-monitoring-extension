@@ -18,6 +18,7 @@ import java.util.Map;
 class StageMetrics {
     private static final Logger logger = LoggerFactory.getLogger(StageMetrics.class);
     private static final String METRIC_SEPARATOR = "|";
+    private static final String ENTITY_TYPE = "STAGES";
     private String applicationName;
     private List<JsonNode> stagesFromApplication;
     private List<Map> stageMetricsFromConfig;
@@ -29,37 +30,29 @@ class StageMetrics {
     }
 
     Map<String, BigDecimal> populateMetrics() throws IOException {
-        if (!isValidationSuccessful()) {
-            return null;
+        if (!SparkUtils.isValidationSuccessful(stageMetricsFromConfig, stagesFromApplication, ENTITY_TYPE)) {
+            return Maps.newHashMap();
         }
-
         Map<String, BigDecimal> stageMetrics = Maps.newHashMap();
         for (JsonNode stage : stagesFromApplication) {
             String stageId = stage.findValue("stageId").asText();
             String stageName = stage.findValue("name").asText();
-            String baseStageMetricPath = METRIC_SEPARATOR + "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Stages" + METRIC_SEPARATOR + stageId + METRIC_SEPARATOR + stageName + METRIC_SEPARATOR;
+            String currentStageMetricPath = "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Stages" + METRIC_SEPARATOR + stageId + METRIC_SEPARATOR + stageName + METRIC_SEPARATOR;
             logger.info("Fetching metrics for executor :" + stageId + " in application: " + applicationName);
             for (Map metric : stageMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
-                if (stage.has(entry.getKey())) {
-                    stageMetrics.put(baseStageMetricPath + entry.getValue(), SparkUtils.convertDoubleToBigDecimal(stage.findValue(entry.getKey()).asDouble()));
+                String metricName = entry.getKey();
+                if (stage.has(metricName)) {
+                    stageMetrics.put(currentStageMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(stage.findValue(metricName).asDouble()));
+                    if (entry.getValue() != null) {
+                        MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentStageMetricPath);
+                    }
                 } else {
-                    logger.debug("Metric :" + entry.getKey() + " not found for stage : " + stageId + ". Please verify whether correct metric names have been entered in the config.yml");
+                    logger.debug("Metric :" + metricName + " not found for stage : " + stageId + ". Please verify whether correct metric names have been entered in the config.yml");
                 }
             }
         }
         return stageMetrics;
-    }
-
-    private boolean isValidationSuccessful() {
-        if (stageMetricsFromConfig == null || stageMetricsFromConfig.isEmpty()) {
-            logger.error("No stage metrics configured in config.yml");
-            return false;
-        } else if (stagesFromApplication == null || stagesFromApplication.isEmpty()) {
-            logger.error("No stages found for the current application");
-            return false;
-        }
-        return true;
     }
 }
 

@@ -11,14 +11,14 @@ public class MetricPropertiesBuilder {
 
     static Map<String, MetricProperties> metricPropertiesMap = Maps.newHashMap();
 
-    public static void buildMetricPropsMap(Map metric, MetricProperties metricProperties) {
-        if (metric == null || metric.isEmpty()) {
+    public static void buildMetricPropsMap(Map metricDetailsFromCfg, String metricName, String metricPath) {
+        if (metricDetailsFromCfg == null || metricDetailsFromCfg.isEmpty()) {
             return;
         }
-
-        String metricName = metricProperties.getMetricName();
-        String metricPath = metricProperties.getMetricPath();
-        Map<String, String> propsFromCfg = (Map) metric.get(metricName);
+        MetricProperties metricProperties = new MetricProperties();
+        Map<String, String> propsFromCfg = (Map) metricDetailsFromCfg.get(metricName);
+        metricProperties.setMetricName(metricName);
+        metricProperties.setMetricPath(metricPath);
         metricProperties.setAlias(propsFromCfg.get("alias"));
         metricProperties.setMultiplier(propsFromCfg.get("multiplier"));
         metricProperties.setClusterRollupType(propsFromCfg.get("cluster"));

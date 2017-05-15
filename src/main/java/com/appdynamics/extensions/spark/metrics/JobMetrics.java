@@ -19,6 +19,7 @@ class JobMetrics {
 
     private static final Logger logger = LoggerFactory.getLogger(JobMetrics.class);
     private static final String METRIC_SEPARATOR = "|";
+    private static final String ENTITY_TYPE = "JOBS";
     private String applicationName;
     private List<JsonNode> jobsFromApplication;
     private List<Map> jobMetricsFromConfig;
@@ -30,11 +31,10 @@ class JobMetrics {
     }
 
     Map<String, BigDecimal> populateMetrics() throws IOException {
-        Map<String, BigDecimal> jobMetrics = Maps.newHashMap();
-        if (!isValidationSuccessful()) {
-            return jobMetrics;
+        if (!SparkUtils.isValidationSuccessful(jobMetricsFromConfig, jobsFromApplication, ENTITY_TYPE)) {
+            return Maps.newHashMap();
         }
-
+        Map<String, BigDecimal> jobMetrics = Maps.newHashMap();
         for (JsonNode job : jobsFromApplication) {
             String jobName = job.findValue("name").asText();
             String jobId = job.findValue("jobId").asText();
@@ -44,29 +44,15 @@ class JobMetrics {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
                 String metricName = entry.getKey();
                 if (job.has(metricName)) {
-                    jobMetrics.put(currentJobMetricPath + entry.getKey(), SparkUtils.convertDoubleToBigDecimal(job.findValue(entry.getKey()).asDouble()));
+                    jobMetrics.put(currentJobMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(job.findValue(metricName).asDouble()));
                     if(entry.getValue() != null) {
-                        MetricProperties metricProperties = new MetricProperties();
-                        metricProperties.setMetricName(metricName);
-                        metricProperties.setMetricPath(currentJobMetricPath);
-                        MetricPropertiesBuilder.buildMetricPropsMap(metric, metricProperties);
+                        MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentJobMetricPath);
                     }
                 } else {
-                    logger.debug("Metric :" + entry.getKey() + " not found for job : " + jobName + ". Please verify whether correct metric names have been entered in the config.yml");
+                    logger.debug("Metric :" + metricName + " not found for job : " + jobName + ". Please verify whether correct metric names have been entered in the config.yml");
                 }
             }
         }
         return jobMetrics;
-    }
-
-    private boolean isValidationSuccessful() {
-        if (jobMetricsFromConfig == null || jobMetricsFromConfig.isEmpty()) {
-            logger.error("No job metrics configured in config.yml");
-            return false;
-        } else if (jobsFromApplication == null || jobsFromApplication.isEmpty()) {
-            logger.error("No jobs found for the current application");
-            return false;
-        }
-        return true;
     }
 }

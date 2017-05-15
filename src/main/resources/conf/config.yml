@@ -1,7 +1,5 @@
-#prefix used to show up metrics in AppDynamics
-#metricPrefix: "Custom Metrics|Solr"
-
-#This will create it in specific Tier. Replace <TIER_ID>
+#This will create it in one specific Tier.
+#Instructions on how to retrieve the Component ID can be found in the Metric Path section of https://docs.appdynamics.com/display/PRO42/Build+a+Monitoring+Extension+Using+Java
 metricPrefix: "Server|Component:<COMPONENT_ID>|Custom Metrics|Spark Monitor|"
 
 #Add your spark history servers here
@@ -11,20 +9,34 @@ servers:
      name: "Spark Master"
 
 
+#Generic metric prefix used to show metrics in AppDynamics (not recommended)
+#metricPrefix: "Custom Metrics|Spark"
+
 numberOfThreads: 5
 
+## This section can be used to configure the metrics published by the extension. You have the ability to add multipliers & modify the metric qualifiers for individual metrics.
+## Valid 'cluster' rollup values: INDIVIDUAL, COLLECTIVE
+## Valid 'aggregation' types: AVERAGE, SUM, OBSERVATION
+## Valid 'time' rollup types: AVERAGE, SUM, CURRENT
+## You can choose to not add these fields to any metric and the default values for each of the above will be used (INDIVIDUAL, AVERAGE & AVERAGE for cluster, aggregation & time respectively).
 metrics:
      jobs:
         - numTasks:
             alias: "Number of tasks in the application"
             multiplier: "2"
-            cluster: "SUM"
+            cluster: "INDIVIDUAL"
             aggregation: "AVERAGE"
-            time: "INDIVIDUAL"
+            time: "SUM"
         - numActiveTasks:
             alias: "Number of active tasks in the application"
             multiplier: "2"
-            cluster: "sum"
-            aggregation: "average"
-            time: "individual"
+            cluster: "COLLECTIVE"
+            aggregation: "OBSERVATION"
+            time: "CURRENT"
         - numCompletedTasks:
+            alias: "Number of completed tasks in the application"
+            multiplier: "2"
+            cluster: "SUM"
+        - numSkippedTasks:
+            alias: "Number of skipped tasks"
+            multiplier: "1"

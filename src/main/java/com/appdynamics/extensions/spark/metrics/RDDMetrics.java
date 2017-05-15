@@ -19,6 +19,7 @@ class RDDMetrics {
 
     private static final Logger logger = LoggerFactory.getLogger(RDDMetrics.class);
     private static final String METRIC_SEPARATOR = "|";
+    private static final String ENTITY_TYPE = "RDD";
     private String applicationName;
     private List<JsonNode> rddFromApplication;
     private List<Map> rddMetricsFromConfig;
@@ -30,36 +31,28 @@ class RDDMetrics {
     }
 
     Map<String, BigDecimal> populateMetrics() throws IOException {
-        if (!isValidationSuccessful()) {
-            return null;
+        if (!SparkUtils.isValidationSuccessful(rddMetricsFromConfig, rddFromApplication, ENTITY_TYPE)) {
+            return Maps.newHashMap();
         }
-
-        Map<String, BigDecimal> jobMetrics = Maps.newHashMap();
+        Map<String, BigDecimal> rddMetrics = Maps.newHashMap();
         for (JsonNode rdd : rddFromApplication) {
             String rddId = rdd.findValue("id").asText();
-            String baseJobMetricPath = METRIC_SEPARATOR + "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Jobs" + METRIC_SEPARATOR + rddId + METRIC_SEPARATOR;
-            logger.info("Fetching metrics for job " + rddId + ": " + rddId + " in application: " + applicationName);
+            String currentRDDMetricPath = "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Jobs" + METRIC_SEPARATOR + rddId + METRIC_SEPARATOR;
+            logger.info("Fetching metrics for RDD: " + rddId + " in application: " + applicationName);
             for (Map metric : rddMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
-                if (rdd.has(entry.getKey())) {
-                    jobMetrics.put(baseJobMetricPath + entry.getValue(), SparkUtils.convertDoubleToBigDecimal(rdd.findValue(entry.getKey()).asDouble()));
+                String metricName = entry.getKey();
+                if (rdd.has(metricName)) {
+                    rddMetrics.put(currentRDDMetricPath + entry.getValue(), SparkUtils.convertDoubleToBigDecimal(rdd.findValue(metricName).asDouble()));
+                    if (entry.getValue() != null) {
+                        MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentRDDMetricPath);
+                    }
                 } else {
-                    logger.debug("Metric :" + entry.getKey() + " not found for rdd : " + rddId + ". Please verify whether correct metric names have been entered in the config.yml");
+                    logger.debug("Metric :" + metricName + " not found for RDD : " + rddId + ". Please verify whether correct metric names have been entered in the config.yml");
                 }
             }
         }
-        return jobMetrics;
-    }
-
-    private boolean isValidationSuccessful() {
-        if (rddMetricsFromConfig == null || rddMetricsFromConfig.isEmpty()) {
-            logger.error("No rdd metrics configured in config.yml");
-            return false;
-        } else if (rddFromApplication == null || rddFromApplication.isEmpty()) {
-            logger.error("No rdd found for the current application");
-            return false;
-        }
-        return true;
+        return rddMetrics;
     }
 }
 
