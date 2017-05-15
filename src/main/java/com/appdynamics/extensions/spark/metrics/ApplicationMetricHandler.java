@@ -7,8 +7,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -50,7 +48,7 @@ public class ApplicationMetricHandler {
             appMetrics.putAll(new JobMetrics(applicationName, jobsForCurrentApp, (List) includedMetrics.get("jobs")).populateMetrics());
             appMetrics.putAll(new ExecutorMetrics(applicationName, executorsForCurrentApp, (List) includedMetrics.get("executors")).populateMetrics());
             appMetrics.putAll(new StageMetrics(applicationName, stagesForCurrentApp, (List) includedMetrics.get("stages")).populateMetrics());
-            appMetrics.putAll(new RDDMetrics(applicationName, stagesForCurrentApp, (List) includedMetrics.get("rdd")).populateMetrics());
+            appMetrics.putAll(new RDDMetrics(applicationName, rddForCurrentApp, (List) includedMetrics.get("rdd")).populateMetrics());
         }
         return appMetrics;
     }

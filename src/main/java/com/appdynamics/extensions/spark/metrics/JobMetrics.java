@@ -30,20 +30,27 @@ class JobMetrics {
     }
 
     Map<String, BigDecimal> populateMetrics() throws IOException {
+        Map<String, BigDecimal> jobMetrics = Maps.newHashMap();
         if (!isValidationSuccessful()) {
-            return null;
+            return jobMetrics;
         }
 
-        Map<String, BigDecimal> jobMetrics = Maps.newHashMap();
         for (JsonNode job : jobsFromApplication) {
             String jobName = job.findValue("name").asText();
             String jobId = job.findValue("jobId").asText();
-            String baseJobMetricPath = METRIC_SEPARATOR + "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Jobs" + METRIC_SEPARATOR + jobId + METRIC_SEPARATOR + jobName + METRIC_SEPARATOR;
+            String currentJobMetricPath = "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Jobs" + METRIC_SEPARATOR + jobId + METRIC_SEPARATOR + jobName + METRIC_SEPARATOR;
             logger.info("Fetching metrics for job " + jobId + ": " + jobName + " in application: " + applicationName);
             for (Map metric : jobMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
-                if (job.has(entry.getKey())) {
-                    jobMetrics.put(baseJobMetricPath + entry.getValue(), SparkUtils.convertDoubleToBigDecimal(job.findValue(entry.getKey()).asDouble()));
+                String metricName = entry.getKey();
+                if (job.has(metricName)) {
+                    jobMetrics.put(currentJobMetricPath + entry.getKey(), SparkUtils.convertDoubleToBigDecimal(job.findValue(entry.getKey()).asDouble()));
+                    if(entry.getValue() != null) {
+                        MetricProperties metricProperties = new MetricProperties();
+                        metricProperties.setMetricName(metricName);
+                        metricProperties.setMetricPath(currentJobMetricPath);
+                        MetricPropertiesBuilder.buildMetricPropsMap(metric, metricProperties);
+                    }
                 } else {
                     logger.debug("Metric :" + entry.getKey() + " not found for job : " + jobName + ". Please verify whether correct metric names have been entered in the config.yml");
                 }
