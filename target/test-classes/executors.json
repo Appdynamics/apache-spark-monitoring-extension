@@ -1,0 +1,22 @@
+[ {
+  "id" : "driver",
+  "hostPort" : "10.0.65.11:52752",
+  "isActive" : true,
+  "rddBlocks" : 19,
+  "memoryUsed" : 10000,
+  "diskUsed" : 0,
+  "totalCores" : 0,
+  "maxTasks" : 0,
+  "activeTasks" : 0,
+  "failedTasks" : 0,
+  "completedTasks" : 0,
+  "totalTasks" : 0,
+  "totalDuration" : 0,
+  "totalGCTime" : 0,
+  "totalInputBytes" : 0,
+  "totalShuffleRead" : 0,
+  "totalShuffleWrite" : 0,
+  "maxMemory" : 2674812518,
+  "executorLogs" : { }
+}
+]

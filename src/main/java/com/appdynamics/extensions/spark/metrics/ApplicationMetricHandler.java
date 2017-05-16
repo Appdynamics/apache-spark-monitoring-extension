@@ -1,5 +1,6 @@
 package com.appdynamics.extensions.spark.metrics;
 
+import com.appdynamics.extensions.spark.helpers.Constants;
 import com.appdynamics.extensions.spark.helpers.HttpHelper;
 import com.appdynamics.extensions.spark.helpers.SparkUtils;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -13,16 +14,14 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+import static com.appdynamics.extensions.spark.helpers.Constants.*;
+
+
 /**
  * Created by aditya.jagtiani on 5/9/17.
  */
 
 public class ApplicationMetricHandler {
-    private static final String CONTEXT_ROOT = "/api/v1/applications/";
-    private static final String JOBS_ENDPOINT = "/jobs/";
-    private static final String EXECUTOR_ENDPOINT = "/executors/";
-    private static final String STAGES_ENDPOINT = "/stages/";
-    private static final String RDD_ENDPOINT = "/storage/rdd/";
     private CloseableHttpClient httpClient;
     private String serverUrl;
 
@@ -33,7 +32,7 @@ public class ApplicationMetricHandler {
 
     public Map<String, BigDecimal> populateStats(Map<String, Map> includedMetrics) throws IOException {
         Map<String, BigDecimal> appMetrics = Maps.newHashMap();
-        String baseUrl = buildUrl(serverUrl, CONTEXT_ROOT);
+        String baseUrl = buildUrl(serverUrl, Constants.CONTEXT_ROOT);
         List<JsonNode> applications = fetchSparkEntity(baseUrl);
 
         for (JsonNode application : applications) {

@@ -2,7 +2,7 @@
 #Instructions on how to retrieve the Component ID can be found in the Metric Path section of https://docs.appdynamics.com/display/PRO42/Build+a+Monitoring+Extension+Using+Java
 metricPrefix: "Server|Component:<COMPONENT_ID>|Custom Metrics|Spark Monitor|"
 
-#Add your spark history servers here
+#Add your Spark History Servers here
 servers:
    - host: "localhost"
      port: 18080
@@ -24,19 +24,7 @@ metrics:
         - numTasks:
             alias: "Number of tasks in the application"
             multiplier: "2.5"
-            cluster: "INDIVIDUAL"
-            aggregation: "AVERAGE"
+            cluster: ""
             time: "SUM"
-        - numActiveTasks:
-            alias: "Number of active tasks in the application"
-            multiplier: "2.5"
-            cluster: "COLLECTIVE"
-            aggregation: "OBSERVATION"
-            time: "CURRENT"
-        - numCompletedTasks:
-            alias: "Number of completed tasks in the application"
-            multiplier: "2.5"
-            cluster: "SUM"
-        - numSkippedTasks:
-            alias: "Number of skipped tasks"
-            multiplier: "1.0"
+
+

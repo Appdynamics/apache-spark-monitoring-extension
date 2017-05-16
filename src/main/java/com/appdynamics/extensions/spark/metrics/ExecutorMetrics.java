@@ -11,13 +11,14 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+import static com.appdynamics.extensions.spark.helpers.Constants.METRIC_SEPARATOR;
+
 /**
  * Created by aditya.jagtiani on 5/9/17.
  */
 
 class ExecutorMetrics {
     private static final Logger logger = LoggerFactory.getLogger(ExecutorMetrics.class);
-    private static final String METRIC_SEPARATOR = "|";
     private static final String ENTITY_TYPE = "EXECUTORS";
     private String applicationName;
     private List<JsonNode> executorsFromApplication;
@@ -41,9 +42,9 @@ class ExecutorMetrics {
             for (Map metric : executorMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
                 String metricName = entry.getKey();
-                if (executor.has(metricName)) {
+                if (executor.findValue(metricName) != null) {
                     executorMetrics.put(currentExecutorMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(executor.findValue(metricName).asDouble()));
-                    if(entry.getValue() != null) {
+                    if (entry.getValue() != null) {
                         MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentExecutorMetricPath);
                     }
                 } else {
@@ -52,17 +53,6 @@ class ExecutorMetrics {
             }
         }
         return executorMetrics;
-    }
-
-    private boolean isValidationSuccessful() {
-        if (executorMetricsFromConfig == null || executorMetricsFromConfig.isEmpty()) {
-            logger.error("No executor metrics configured in config.yml");
-            return false;
-        } else if (executorsFromApplication == null || executorsFromApplication.isEmpty()) {
-            logger.error("No executors found for the current application");
-            return false;
-        }
-        return true;
     }
 }
 

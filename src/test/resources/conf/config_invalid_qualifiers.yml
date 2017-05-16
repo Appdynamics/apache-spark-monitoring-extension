@@ -1,0 +1,8 @@
+metrics:
+     jobs:
+        - numTasks:
+            alias:
+            multiplier: "this is supposed to be numeric"
+            cluster: "random1"
+            aggregation: ""
+            time: "random2"

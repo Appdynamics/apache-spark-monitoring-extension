@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+import static com.appdynamics.extensions.spark.helpers.Constants.METRIC_SEPARATOR;
+
 /**
  * Created by aditya.jagtiani on 5/9/17.
  */
@@ -18,7 +20,6 @@ import java.util.Map;
 class JobMetrics {
 
     private static final Logger logger = LoggerFactory.getLogger(JobMetrics.class);
-    private static final String METRIC_SEPARATOR = "|";
     private static final String ENTITY_TYPE = "JOBS";
     private String applicationName;
     private List<JsonNode> jobsFromApplication;
@@ -43,9 +44,9 @@ class JobMetrics {
             for (Map metric : jobMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
                 String metricName = entry.getKey();
-                if (job.has(metricName)) {
+                if (job.findValue(metricName) != null) {
                     jobMetrics.put(currentJobMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(job.findValue(metricName).asDouble()));
-                    if(entry.getValue() != null) {
+                    if (entry.getValue() != null) {
                         MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentJobMetricPath);
                     }
                 } else {

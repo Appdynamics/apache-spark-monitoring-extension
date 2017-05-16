@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+import static com.appdynamics.extensions.spark.helpers.Constants.METRIC_SEPARATOR;
+
 /**
  * Created by aditya.jagtiani on 5/9/17.
  */
@@ -18,7 +20,6 @@ import java.util.Map;
 class RDDMetrics {
 
     private static final Logger logger = LoggerFactory.getLogger(RDDMetrics.class);
-    private static final String METRIC_SEPARATOR = "|";
     private static final String ENTITY_TYPE = "RDD";
     private String applicationName;
     private List<JsonNode> rddFromApplication;
@@ -42,8 +43,8 @@ class RDDMetrics {
             for (Map metric : rddMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
                 String metricName = entry.getKey();
-                if (rdd.has(metricName)) {
-                    rddMetrics.put(currentRDDMetricPath + entry.getValue(), SparkUtils.convertDoubleToBigDecimal(rdd.findValue(metricName).asDouble()));
+                if (rdd.findValue(metricName) != null) {
+                    rddMetrics.put(currentRDDMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(rdd.findValue(metricName).asDouble()));
                     if (entry.getValue() != null) {
                         MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentRDDMetricPath);
                     }

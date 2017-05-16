@@ -1,0 +1,8 @@
+metrics:
+     jobs:
+        - numTasks:
+            alias: "Number of tasks in the application"
+            multiplier: "2.5"
+            cluster: "INDIVIDUAL"
+            aggregation: "AVERAGE"
+            time: "SUM"

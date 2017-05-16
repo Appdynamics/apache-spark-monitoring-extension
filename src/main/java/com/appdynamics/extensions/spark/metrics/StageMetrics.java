@@ -11,13 +11,14 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+import static com.appdynamics.extensions.spark.helpers.Constants.METRIC_SEPARATOR;
+
 /**
  * Created by aditya.jagtiani on 5/9/17.
  */
 
 class StageMetrics {
     private static final Logger logger = LoggerFactory.getLogger(StageMetrics.class);
-    private static final String METRIC_SEPARATOR = "|";
     private static final String ENTITY_TYPE = "STAGES";
     private String applicationName;
     private List<JsonNode> stagesFromApplication;
@@ -42,7 +43,7 @@ class StageMetrics {
             for (Map metric : stageMetricsFromConfig) {
                 Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
                 String metricName = entry.getKey();
-                if (stage.has(metricName)) {
+                if (stage.findValue(metricName) != null) {
                     stageMetrics.put(currentStageMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(stage.findValue(metricName).asDouble()));
                     if (entry.getValue() != null) {
                         MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentStageMetricPath);

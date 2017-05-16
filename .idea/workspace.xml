@@ -2,7 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ec12c26-0791-4b84-90cf-4e738ea88700" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/Constants.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/ExecutorMetricsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/JobMetricsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/RDDMetricsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/StageMetricsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/conf/config.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/conf/config_invalid_qualifiers.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/conf/config_valid_qualifiers.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/executors.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/jobs.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/rdd.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/resources/stages.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apache-spark-monitoring-extension.jar" afterPath="$PROJECT_DIR$/target/apache-spark-monitoring-extension.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/SparkMonitorTask.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/SparkMonitorTask.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/JobMetrics.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/JobMetrics.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/RDDMetrics.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/RDDMetrics.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/StageMetrics.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/StageMetrics.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.appdynamics.extensions.spark.SparkMonitor-1.0-SNAPSHOT.zip" afterPath="$PROJECT_DIR$/target/com.appdynamics.extensions.spark.SparkMonitor-1.0-SNAPSHOT.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-apache-spark-monitoring-extension.jar" afterPath="$PROJECT_DIR$/target/original-apache-spark-monitoring-extension.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/apache-spark-monitoring-extension.iml" afterPath="$PROJECT_DIR$/apache-spark-monitoring-extension.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/RDDMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/RDDMetrics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/conf/config.yml" afterPath="$PROJECT_DIR$/src/main/resources/conf/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/conf/config.yml" afterPath="$PROJECT_DIR$/target/classes/conf/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,56 +48,34 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DockManager">
-    <window id="4">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file leaf-file-name="JobMetrics.java" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="421">
-                    <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-                    <folding>
-                      <element signature="imports" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SparkStats.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkStats.java">
+      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MetricProperties.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
+      <file leaf-file-name="config_valid_qualifiers.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/conf/config_valid_qualifiers.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ApplicationMetricHandler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java">
+      <file leaf-file-name="HttpHelper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/HttpHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RDDMetrics.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/RDDMetrics.java">
+      <file leaf-file-name="SparkMonitorTask.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            <state relative-caret-position="318">
+              <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,8 +98,8 @@
       <file leaf-file-name="MetricPropertiesBuilder.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="-93">
+              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,60 +107,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparkUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/SparkUtils.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SparkMonitorTask.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExecutorMetrics.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="33" column="36" lean-forward="false" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StageMetrics.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+            <state relative-caret-position="333">
+              <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetricPropertiesBuilderTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config_invalid_qualifiers.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/resources/conf/config_invalid_qualifiers.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SparkMonitor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="66" lean-forward="false" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,19 +193,41 @@
       <list>
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/HttpHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitor.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkStats.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesOverride.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/SparkUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/jobs.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/ApplicationMetricHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/JobMetrics.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/MetricPropertiesBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/JobMetricsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/ExecutorMetrics.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/executors.json" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/ExecutorMetricsTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/StageMetrics.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/stages.json" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/StageMetricsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/rdd.json" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/RDDMetrics.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/RDDMetrics.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/RDDMetricsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/conf/config_with_overrides.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/RDDMetrics.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/RDDMetricsTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/conf/config_valid_qualifiers.yml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/JobMetricsTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/conf/config.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/Constants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/conf/config_invalid_qualifiers.yml" />
       </list>
     </option>
   </component>
@@ -257,6 +289,62 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apache-spark-monitoring-extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apache-spark-monitoring-extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apache-spark-monitoring-extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="apache-spark-monitoring-extension" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="metrics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -382,6 +470,11 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.appdynamics.extensions.spark.metrics" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -394,7 +487,33 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SparkMonitor">
+  <component name="RunManager" selected="JUnit.MetricPropertiesBuilderTest">
+    <configuration default="false" name="RDDMetricsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.appdynamics.extensions.spark.metrics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="apache-spark-monitoring-extension" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.appdynamics.extensions.spark.metrics" />
+      <option name="MAIN_CLASS_NAME" value="com.appdynamics.extensions.spark.metrics.RDDMetricsTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="false" name="SparkMonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -413,6 +532,84 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="apache-spark-monitoring-extension" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="MetricPropertiesBuilderTest.buildMetricPropsMapTest_ValidQualifiers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.appdynamics.extensions.spark.metrics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="apache-spark-monitoring-extension" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.appdynamics.extensions.spark.metrics" />
+      <option name="MAIN_CLASS_NAME" value="com.appdynamics.extensions.spark.metrics.MetricPropertiesBuilderTest" />
+      <option name="METHOD_NAME" value="buildMetricPropsMapTest_ValidQualifiers" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MetricPropertiesBuilderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.appdynamics.extensions.spark.metrics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="apache-spark-monitoring-extension" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.appdynamics.extensions.spark.metrics" />
+      <option name="MAIN_CLASS_NAME" value="com.appdynamics.extensions.spark.metrics.MetricPropertiesBuilderTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="MetricPropertiesBuilderTest.buildMetricPropsMapTest_InvalidQualifiers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.appdynamics.extensions.spark.metrics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="apache-spark-monitoring-extension" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.appdynamics.extensions.spark.metrics" />
+      <option name="MAIN_CLASS_NAME" value="com.appdynamics.extensions.spark.metrics.MetricPropertiesBuilderTest" />
+      <option name="METHOD_NAME" value="buildMetricPropsMapTest_InvalidQualifiers" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -619,12 +816,20 @@
       <listeners />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.SparkMonitor" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.RDDMetricsTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.SparkMonitor" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MetricPropertiesBuilderTest.buildMetricPropsMapTest_ValidQualifiers" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.MetricPropertiesBuilderTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MetricPropertiesBuilderTest.buildMetricPropsMapTest_InvalidQualifiers" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Application.SparkMonitor" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MetricPropertiesBuilderTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MetricPropertiesBuilderTest.buildMetricPropsMapTest_InvalidQualifiers" />
+        <item index="2" class="java.lang.String" itemvalue="Application.SparkMonitor" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MetricPropertiesBuilderTest.buildMetricPropsMapTest_ValidQualifiers" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.RDDMetricsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -641,8 +846,41 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="MetricPropertiesBuilderTest - 2017.05.16 at 13h 37m 30s.xml">
+      <configuration name="MetricPropertiesBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MetricPropertiesBuilderTest - 2017.05.16 at 16h 40m 42s.xml">
+      <configuration name="MetricPropertiesBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MetricPropertiesBuilderTest - 2017.05.16 at 16h 41m 01s.xml">
+      <configuration name="MetricPropertiesBuilderTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MetricPropertiesBuilderTest_buildMetricPropsMapTest_InvalidQualifiers - 2017.05.16 at 16h 39m 59s.xml">
+      <configuration name="MetricPropertiesBuilderTest.buildMetricPropsMapTest_InvalidQualifiers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MetricPropertiesBuilderTest_buildMetricPropsMapTest_ValidQualifiers - 2017.05.16 at 13h 27m 46s.xml">
+      <configuration name="MetricPropertiesBuilderTest.buildMetricPropsMapTest_ValidQualifiers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MetricPropertiesBuilderTest_buildMetricPropsMapTest_ValidQualifiers - 2017.05.16 at 13h 30m 27s.xml">
+      <configuration name="MetricPropertiesBuilderTest.buildMetricPropsMapTest_ValidQualifiers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MetricPropertiesBuilderTest_buildMetricPropsMapTest_ValidQualifiers - 2017.05.16 at 13h 36m 12s.xml">
+      <configuration name="MetricPropertiesBuilderTest.buildMetricPropsMapTest_ValidQualifiers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MetricPropertiesBuilderTest_buildMetricPropsMapTest_ValidQualifiers - 2017.05.16 at 13h 36m 24s.xml">
+      <configuration name="MetricPropertiesBuilderTest.buildMetricPropsMapTest_ValidQualifiers" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RDDMetricsTest - 2017.05.16 at 12h 03m 04s.xml">
+      <configuration name="RDDMetricsTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="RDDMetricsTest - 2017.05.16 at 12h 03m 17s.xml">
+      <configuration name="RDDMetricsTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1919" height="1010" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -653,19 +891,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18499218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18499218" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3387978" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41202185" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -681,18 +919,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java</url>
-          <line>55</line>
-          <properties />
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java</url>
-          <line>37</line>
-          <properties />
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkStats.java</url>
           <line>31</line>
           <properties />
@@ -700,27 +926,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java</url>
-          <line>52</line>
+          <line>51</line>
           <properties />
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java</url>
-          <line>34</line>
+          <url>file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/JobMetricsTest.java</url>
+          <line>39</line>
           <properties />
-          <option name="timeStamp" value="74" />
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java</url>
-          <line>48</line>
+          <url>file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/ExecutorMetricsTest.java</url>
+          <line>41</line>
           <properties />
-          <option name="timeStamp" value="79" />
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/StageMetricsTest.java</url>
+          <line>41</line>
+          <properties />
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/RDDMetricsTest.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java</url>
-          <line>61</line>
+          <line>38</line>
           <properties />
-          <option name="timeStamp" value="80" />
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java</url>
+          <line>80</line>
+          <properties />
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -733,7 +977,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="81" />
+      <option name="time" value="100" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -750,28 +994,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/HttpHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/appd-exts-commons/1.6.2/appd-exts-commons-1.6.2-sources.jar!/com/appdynamics/extensions/util/MetricWriteHelperFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="16" column="42" lean-forward="false" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -832,38 +1058,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitor.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/SparkUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="39" column="85" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="85" />
+        <state relative-caret-position="386">
+          <caret line="39" column="25" lean-forward="false" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/stages.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/SparkUtils.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/model/FrameworkMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="450">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/runners/ParentRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="161" column="0" lean-forward="false" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/jobs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/executors.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/rdd.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ExecutorMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="33" column="36" lean-forward="false" selection-start-line="33" selection-start-column="36" selection-end-line="33" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="36" column="54" lean-forward="true" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
+        <state relative-caret-position="275">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -872,44 +1144,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/RDDMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="395">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/ExecutorMetricsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="1" lean-forward="false" selection-start-line="46" selection-start-column="1" selection-end-line="46" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/StageMetricsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/conf/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/RDDMetricsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="44" column="116" lean-forward="false" selection-start-line="44" selection-start-column="116" selection-end-line="44" selection-end-column="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/JobMetricsTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="41" column="28" lean-forward="false" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="195">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -918,8 +1218,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="356">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -934,13 +1234,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/HttpHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="55" column="25" lean-forward="true" selection-start-line="55" selection-start-column="25" selection-end-line="55" selection-end-column="25" />
+        <state relative-caret-position="120">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/helpers/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="66" lean-forward="false" selection-start-line="20" selection-start-column="66" selection-end-line="20" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="64" column="53" lean-forward="false" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="54" column="21" lean-forward="false" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-93">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="31" column="40" lean-forward="true" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/conf/config_valid_qualifiers.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/conf/config_invalid_qualifiers.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
