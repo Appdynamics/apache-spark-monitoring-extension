@@ -18,13 +18,241 @@ numberOfThreads: 5
 ## Valid 'cluster' rollup values: INDIVIDUAL, COLLECTIVE
 ## Valid 'aggregation' types: AVERAGE, SUM, OBSERVATION
 ## Valid 'time' rollup types: AVERAGE, SUM, CURRENT
-## You can choose to not add these fields to any metric and the default values for each of the above will be used (INDIVIDUAL, AVERAGE & AVERAGE for cluster, aggregation & time respectively).
+## You can choose to not add any or all of these fields to any metric and the default values for each of the above will be used (INDIVIDUAL, AVERAGE & AVERAGE for cluster, aggregation & time respectively).
 metrics:
      jobs:
         - numTasks:
             alias: "Number of tasks in the application"
-            multiplier: "2.5"
-            cluster: ""
+            multiplier: "1.0"
+            cluster: "INDIVIDUAL"
+            aggregation: "AVERAGE"
             time: "SUM"
+        - numCompletedTasks:
+            alias: "Number of completed tasks in the application"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numSkippedTasks:
+            alias: "Number of completed tasks in the application"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numFailedTasks:
+            alias: "Number of completed tasks in the application"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numActiveStages:
+            alias: "Number of active stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numCompletedStages:
+            alias: "Number of completed stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numSkippedStages:
+            alias: "Number of completed stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numFailedStages:
+            alias: "Number of failed stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+
+     stages:
+        - numActiveTasks:
+            alias: "Number of active tasks in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numCompleteTasks:
+            alias: "Number of complete tasks in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numFailedTasks:
+            alias: "Number of failed tasks in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - executorRunTime:
+            alias: "Time spent by executor in the application's stages (ms)"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - inputBytes:
+            alias: "Input bytes in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - inputRecords:
+            alias: "Input records in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - outputBytes:
+            alias: "Output bytes in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - outputRecords:
+            alias: "Output records in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - shuffleReadBytes:
+            alias: "Number of bytes read during a shuffle in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - shuffleReadRecords:
+            alias: "Number of records read during a shuffle in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - shuffleWriteBytes:
+            alias: "Number of bytes written during a shuffle in an application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - shuffleWriteRecords:
+            alias: "Number of shuffled records in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - memoryBytesSpilled:
+            alias: "Number of bytes spilled to disk in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - diskBytesSpilled:
+            alias: "Max size on disk of the spilled bytes in the application's stages"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
 
 
+     executors:
+        - rddBlocks:
+            alias: "Number of persisted RDD blocks in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - memoryUsed:
+            alias: "Amount of memory used for cached RDDs in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - diskUsed:
+            alias: "Amount of disk space used by persisted RDDs in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - activeTasks:
+            alias: "Number of active tasks in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - failedTasks:
+            alias: "Number of failed tasks in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - completedTasks:
+            alias: "Number of completed tasks in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - totalTasks:
+            alias: "Total number of tasks in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - totalDuration:
+            alias: "Time spent by the application's executors executing tasks (ms)"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - totalInputBytes:
+            alias: "Total number of input bytes in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - totalShuffleRead:
+            alias: "Total number of bytes read during a shuffle in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - totalShuffleWrite:
+            alias: "Total number of shuffled bytes in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - maxMemory:
+            alias: "Maximum memory available for caching RDD blocks in the application's executors"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+
+     rdd:
+        - numPartitions:
+            alias: "Number of persisted RDD partitions in the application/second"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - numCachedPartitions:
+            alias: "Number of in-memory cached RDD partitions in the application/second"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - memoryUsed:
+            alias: "Amount of memory used in the application's persisted RDDs"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
+        - diskUsed:
+            alias: "Amount of disk space used by persisted RDDs in the application"
+            multiplier: ""
+            cluster: ""
+            aggregation: ""
+            time: ""
