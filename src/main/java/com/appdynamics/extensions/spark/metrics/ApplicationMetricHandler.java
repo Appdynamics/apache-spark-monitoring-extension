@@ -8,6 +8,9 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.protocol.HTTP;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -22,6 +25,7 @@ import static com.appdynamics.extensions.spark.helpers.Constants.*;
  */
 
 public class ApplicationMetricHandler {
+    private static final Logger logger = LoggerFactory.getLogger(ApplicationMetricHandler.class);
     private CloseableHttpClient httpClient;
     private String serverUrl;
 
@@ -58,12 +62,32 @@ public class ApplicationMetricHandler {
     }
 
     private List<JsonNode> fetchSparkEntity(String url) throws IOException {
-        CloseableHttpResponse response = HttpHelper.doGet(httpClient, url);
+        CloseableHttpResponse httpResponse = null;
+        List<JsonNode> entities = Lists.newArrayList();
+        try {
+            httpResponse = HttpHelper.doGet(httpClient, url);
+            JsonNode jsonNode = SparkUtils.getJsonNode(httpResponse);
+            for (JsonNode node : jsonNode) {
+                entities.add(node);
+            }
+        }
+        catch(Exception ex) {
+            logger.error("Error while fetching spark entity from url : " + url);
+        }
+        finally {
+            HttpHelper.closeHttpResponse(httpResponse);
+        }
+        return entities;
+    }
+
+
+
+/*        CloseableHttpResponse response = HttpHelper.doGet(httpClient, url);
         List<JsonNode> entities = Lists.newArrayList();
         JsonNode jsonNode = SparkUtils.getJsonNode(response);
         for (JsonNode node : jsonNode) {
             entities.add(node);
         }
         return entities;
-    }
+    }*/
 }
