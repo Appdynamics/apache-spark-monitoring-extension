@@ -1,0 +1,24 @@
+<monitor>
+    <name>SparkMonitor</name>
+    <type>managed</type>
+    <description>Spark monitor</description>
+    <monitor-configuration></monitor-configuration>
+    <enabled>true</enabled>
+    <monitor-run-task>
+        <execution-style>periodic</execution-style>
+        <execution-frequency-in-seconds>60</execution-frequency-in-seconds>
+        <name>Spark Monitor Run Task</name>
+        <display-name>Spark Monitor Task</display-name>
+        <description>Spark Monitor Task</description>
+        <type>java</type>
+        <execution-timeout-in-secs>60</execution-timeout-in-secs>
+        <task-arguments>
+            <!-- config file-->
+            <argument name="config-file" is-required="true" default-value="monitors/SparkMonitor/config.yml" />
+        </task-arguments>
+        <java-task>
+            <classpath>spark-monitoring-extension.jar</classpath>
+            <impl-class>com.appdynamics.extensions.spark.SparkMonitor</impl-class>
+        </java-task>
+    </monitor-run-task>
+</monitor>

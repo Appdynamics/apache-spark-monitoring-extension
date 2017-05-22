@@ -1,6 +1,7 @@
 package com.appdynamics.extensions.spark.metrics;
 
 import com.appdynamics.extensions.NumberUtils;
+import com.appdynamics.extensions.util.DeltaMetricsCalculator;
 import com.google.common.collect.Maps;
 
 import java.util.Map;
@@ -12,7 +13,8 @@ import static com.appdynamics.extensions.spark.helpers.Constants.*;
  */
 
 public class MetricPropertiesBuilder {
-    static Map<String, MetricProperties> metricPropertiesMap = Maps.newHashMap();
+    private static Map<String, MetricProperties> metricPropertiesMap = Maps.newHashMap();
+    public static DeltaMetricsCalculator DELTA_CALCULATOR = new DeltaMetricsCalculator(10);
 
     static void buildMetricPropsMap(Map metricDetailsFromCfg, String metricName, String metricPath) {
         if (metricDetailsFromCfg == null || metricDetailsFromCfg.isEmpty()) {
@@ -27,6 +29,7 @@ public class MetricPropertiesBuilder {
         metricProperties.setAggregationType(validateAggregationType(propsFromCfg));
         metricProperties.setClusterRollupType(validateClusterRollupType(propsFromCfg));
         metricProperties.setTimeRollupType(validateTimeRollupType(propsFromCfg));
+        metricProperties.setDelta(validateDelta(propsFromCfg));
         metricPropertiesMap.put(metricPath + metricName, metricProperties);
     }
 
@@ -53,6 +56,10 @@ public class MetricPropertiesBuilder {
     private static String validateMultiplier(Map<String, String> propsFromCfg) {
         return (propsFromCfg.get("multiplier") == null || propsFromCfg.get("multiplier").isEmpty() ||
                 !NumberUtils.isNumber(propsFromCfg.get("multiplier"))) ? DEFAULT_MULTIPLIER : propsFromCfg.get("multiplier");
+    }
+
+    private static boolean validateDelta(Map<String, String> propsFromCfg) {
+        return !(propsFromCfg.get("delta") == null || propsFromCfg.get("multiplier").isEmpty()) && Boolean.parseBoolean(propsFromCfg.get("delta"));
     }
 
     public static Map<String, MetricProperties> getMetricPropsMap() {

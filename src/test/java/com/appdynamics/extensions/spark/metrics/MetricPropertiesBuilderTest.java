@@ -30,6 +30,7 @@ public class MetricPropertiesBuilderTest {
         Assert.assertTrue(properties.getClusterRollupType().equals("INDIVIDUAL"));
         Assert.assertTrue(properties.getTimeRollupType().equals("SUM"));
         Assert.assertTrue(properties.getMultiplier().equals("2.5"));
+        Assert.assertTrue(properties.getDelta());
     }
 
     @Test
@@ -47,6 +48,7 @@ public class MetricPropertiesBuilderTest {
         Assert.assertTrue(properties.getClusterRollupType().equals(DEFAULT_CLUSTER_ROLLUP_TYPE));
         Assert.assertTrue(properties.getTimeRollupType().equals(DEFAULT_TIME_ROLLUP_TYPE));
         Assert.assertTrue(properties.getMultiplier().equals(DEFAULT_MULTIPLIER));
+        Assert.assertFalse(properties.getDelta());
     }
 
 }

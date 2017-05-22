@@ -11,20 +11,21 @@ public class MetricProperties {
     private String clusterRollupType;
     private String multiplier;
     private String metricPath;
+    private boolean delta;
 
     public String getAlias() {
         return alias;
     }
 
-    public void setAlias(String alias) {
+    void setAlias(String alias) {
         this.alias = alias;
     }
 
-    public String getMetricName() {
+    String getMetricName() {
         return metricName;
     }
 
-    public void setMetricName(String metricName) {
+    void setMetricName(String metricName) {
         this.metricName = metricName;
     }
 
@@ -32,7 +33,7 @@ public class MetricProperties {
         return aggregationType;
     }
 
-    public void setAggregationType(String aggregationType) {
+    void setAggregationType(String aggregationType) {
         this.aggregationType = aggregationType;
     }
 
@@ -40,7 +41,7 @@ public class MetricProperties {
         return timeRollupType;
     }
 
-    public void setTimeRollupType(String timeRollupType) {
+    void setTimeRollupType(String timeRollupType) {
         this.timeRollupType = timeRollupType;
     }
 
@@ -48,7 +49,7 @@ public class MetricProperties {
         return clusterRollupType;
     }
 
-    public void setClusterRollupType(String clusterRollupType) {
+    void setClusterRollupType(String clusterRollupType) {
         this.clusterRollupType = clusterRollupType;
     }
 
@@ -56,14 +57,22 @@ public class MetricProperties {
         return multiplier;
     }
 
-    public void setMultiplier(String multiplier) {
+    void setMultiplier(String multiplier) {
         this.multiplier = multiplier;
     }
 
-    public void setMetricPath(String metricPath) {
+    void setMetricPath(String metricPath) {
         this.metricPath = metricPath;
     }
     public String getMetricPath() {
         return metricPath;
+    }
+
+    void setDelta(boolean delta) {
+        this.delta = delta;
+    }
+
+    public boolean getDelta() {
+        return delta;
     }
 }

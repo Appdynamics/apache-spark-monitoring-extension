@@ -6,3 +6,4 @@ metrics:
             cluster: "INDIVIDUAL"
             aggregation: "AVERAGE"
             time: "SUM"
+            delta: "true"
