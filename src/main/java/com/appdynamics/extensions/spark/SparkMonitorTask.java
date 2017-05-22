@@ -67,7 +67,9 @@ public class SparkMonitorTask implements Runnable {
                 clusterRollupType = propertiesForCurrentMetric.getClusterRollupType();
                 timeRollupType = propertiesForCurrentMetric.getTimeRollupType();
             }
-            metricWriter.printMetric(metricPath, String.valueOf(metricValue), aggregationType, timeRollupType, clusterRollupType);
+            if(metricValue != null) {
+                metricWriter.printMetric(metricPath, String.valueOf(metricValue), aggregationType, timeRollupType, clusterRollupType);
+            }
         }
     }
 }

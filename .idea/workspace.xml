@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ec12c26-0791-4b84-90cf-4e738ea88700" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.MetricPropertiesBuilderTest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.MetricPropertiesBuilderTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/apache-spark-monitoring-extension.jar" afterPath="$PROJECT_DIR$/target/apache-spark-monitoring-extension.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/SparkMonitorTask.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/SparkMonitorTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/ApplicationMetricHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricProperties.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricProperties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.class" afterPath="$PROJECT_DIR$/target/classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/com.appdynamics.extensions.spark.SparkMonitor-1.0-SNAPSHOT.zip" afterPath="$PROJECT_DIR$/target/com.appdynamics.extensions.spark.SparkMonitor-1.0-SNAPSHOT.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/original-apache-spark-monitoring-extension.jar" afterPath="$PROJECT_DIR$/target/original-apache-spark-monitoring-extension.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.class" afterPath="$PROJECT_DIR$/target/test-classes/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/conf/config.yml" afterPath="$PROJECT_DIR$/src/main/resources/conf/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/conf/monitor.xml" afterPath="$PROJECT_DIR$/src/main/resources/conf/monitor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.java" afterPath="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/conf/config_valid_qualifiers.yml" afterPath="$PROJECT_DIR$/src/test/resources/conf/config_valid_qualifiers.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/conf/config.yml" afterPath="$PROJECT_DIR$/target/classes/conf/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/conf/monitor.xml" afterPath="$PROJECT_DIR$/target/classes/conf/monitor.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.ExecutorMetricsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.ExecutorMetricsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.JobMetricsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.JobMetricsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.RDDMetricsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.RDDMetricsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.StageMetricsTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.appdynamics.extensions.spark.metrics.StageMetricsTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.ExecutorMetricsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.ExecutorMetricsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.JobMetricsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.JobMetricsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.RDDMetricsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.RDDMetricsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.StageMetricsTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/com.appdynamics.extensions.spark.metrics.StageMetricsTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/conf/config_valid_qualifiers.yml" afterPath="$PROJECT_DIR$/target/test-classes/conf/config_valid_qualifiers.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,14 +36,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SparkMonitorTask.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SparkMonitorTask.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
+            <state relative-caret-position="245">
+              <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MetricWriteHelper.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/appd-exts-commons/1.6.2/appd-exts-commons-1.6.2-sources.jar!/com/appdynamics/extensions/util/MetricWriteHelper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -98,16 +80,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/conf/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StageMetrics.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/StageMetrics.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -130,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MetricProperties.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MetricProperties.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+            <state relative-caret-position="370">
+              <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
               <folding>
                 <element signature="e#1660#1661#0" expanded="true" />
                 <element signature="e#1688#1689#0" expanded="true" />
@@ -146,8 +118,8 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="450">
+              <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -219,9 +191,9 @@
         <option value="$PROJECT_DIR$/src/test/resources/conf/config_valid_qualifiers.yml" />
         <option value="$PROJECT_DIR$/src/test/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesBuilderTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/conf/config.yml" />
-        <option value="$PROJECT_DIR$/src/main/resources/conf/config.yml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/conf/config.yml" />
       </list>
     </option>
   </component>
@@ -1096,13 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/appd-exts-commons/1.6.2/appd-exts-commons-1.6.2-sources.jar!/com/appdynamics/extensions/util/MetricWriteHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricPropertiesOverride.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1345,28 +1310,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/JobMetrics.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="57" column="55" lean-forward="false" selection-start-line="57" selection-start-column="55" selection-end-line="57" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1393,11 +1340,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/metrics/MetricProperties.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="70" column="4" lean-forward="true" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
+        <state relative-caret-position="370">
+          <caret line="51" column="31" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
           <folding>
             <element signature="e#1660#1661#0" expanded="true" />
             <element signature="e#1688#1689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/appdynamics/appd-exts-commons/1.6.2/appd-exts-commons-1.6.2-sources.jar!/com/appdynamics/extensions/util/MetricWriteHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/conf/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="12" lean-forward="false" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/appdynamics/extensions/spark/SparkMonitorTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="58" column="38" lean-forward="false" selection-start-line="58" selection-start-column="38" selection-end-line="58" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
