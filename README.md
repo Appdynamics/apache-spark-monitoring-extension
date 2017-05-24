@@ -34,8 +34,11 @@ As mentioned above, the Spark History Server is essential for metrics to persist
   <pre>
   ./bin/spark-submit xyz --properties-file path_to_spark_defaults_conf/spark-defaults.conf
  </pre>
- 
  4. Repeat this for a worker node prior to deploying apps any apps on it. 
+ 5. Start the history server on each node. 
+ <pre>
+ ./sbin/start-history-server.sh
+ </pre>
  
 #### Installing the Extension
 1.  Unzip the contents of 'SparkMonitor'-<version>.zip file and copy the directory to `<your-machine-agent-dir>/monitors</your-machine-agent-dir>`.</version>
