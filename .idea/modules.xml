@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/apache-spark-monitoring-extension.iml" filepath="$PROJECT_DIR$/apache-spark-monitoring-extension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../websphere-mq-monitoring-extension/websphere-mq-monitoring-extension.iml" filepath="$PROJECT_DIR$/../websphere-mq-monitoring-extension/websphere-mq-monitoring-extension.iml" />
     </modules>
   </component>
 </project>

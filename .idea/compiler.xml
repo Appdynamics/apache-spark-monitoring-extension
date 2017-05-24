@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apache-spark-monitoring-extension" />
+        <module name="websphere-mq-monitoring-extension" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="apache-spark-monitoring-extension" target="1.5" />
+      <module name="websphere-mq-monitoring-extension" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

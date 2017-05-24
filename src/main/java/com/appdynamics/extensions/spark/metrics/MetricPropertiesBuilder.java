@@ -11,12 +11,11 @@ import static com.appdynamics.extensions.spark.helpers.Constants.*;
 /**
  * Created by aditya.jagtiani on 5/15/17.
  */
-
 public class MetricPropertiesBuilder {
     private static Map<String, MetricProperties> metricPropertiesMap = Maps.newHashMap();
     public static DeltaMetricsCalculator DELTA_CALCULATOR = new DeltaMetricsCalculator(10);
 
-    static void buildMetricPropsMap(Map metricDetailsFromCfg, String metricName, String metricPath) {
+    public static void buildMetricPropsMap(Map metricDetailsFromCfg, String metricName, String metricPath) {
         if (metricDetailsFromCfg == null || metricDetailsFromCfg.isEmpty()) {
             return;
         }

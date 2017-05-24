@@ -1,24 +1,18 @@
 package com.appdynamics.extensions.spark;
 
 import com.appdynamics.extensions.conf.MonitorConfiguration;
-import com.appdynamics.extensions.spark.metrics.MetricProperties;
-import com.appdynamics.extensions.spark.metrics.MetricPropertiesBuilder;
-import com.appdynamics.extensions.util.MetricWriteHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 import java.util.Map;
 
-import static com.appdynamics.extensions.spark.helpers.Constants.*;
-import static com.appdynamics.extensions.spark.metrics.MetricPropertiesBuilder.DELTA_CALCULATOR;
-
 public class SparkMonitorTask implements Runnable {
     private static final Logger logger = LoggerFactory.getLogger(SparkMonitorTask.class);
     private MonitorConfiguration configuration;
     private Map server;
 
-    SparkMonitorTask(MonitorConfiguration configuration, Map server) {
+    public SparkMonitorTask(MonitorConfiguration configuration, Map server) {
         this.configuration = configuration;
         this.server = server;
     }
@@ -37,39 +31,10 @@ public class SparkMonitorTask implements Runnable {
         try {
             SparkStats sparkStats = new SparkStats(configuration, server);
             Map<String, BigDecimal> sparkMetrics = sparkStats.populateMetrics();
-            printMetrics(sparkMetrics);
+            sparkStats.printMetrics(sparkMetrics);
             logger.info("Successfully completed the Spark Monitoring Task for " + server.get("name").toString());
         } catch (Exception ex) {
             logger.error("Spark Monitoring Task Failed", ex.getMessage());
-        }
-    }
-
-    private void printMetrics(Map<String, BigDecimal> sparkMetrics) {
-        MetricWriteHelper metricWriter = configuration.getMetricWriter();
-        String metricPrefix = configuration.getMetricPrefix();
-        String aggregationType = DEFAULT_AGGREGATION_TYPE;
-        String clusterRollupType = DEFAULT_CLUSTER_ROLLUP_TYPE;
-        String timeRollupType = DEFAULT_TIME_ROLLUP_TYPE;
-        Map<String, MetricProperties> metricOverrides = MetricPropertiesBuilder.getMetricPropsMap();
-
-        for (Map.Entry<String, BigDecimal> metric : sparkMetrics.entrySet()) {
-            String metricPath = metricPrefix + METRIC_SEPARATOR + metric.getKey();
-            String metricName = metric.getKey();
-            BigDecimal metricValue = metric.getValue();
-            if (metricOverrides.containsKey(metricName)) {
-                MetricProperties propertiesForCurrentMetric = metricOverrides.get(metricName);
-                metricPath = metricPrefix + METRIC_SEPARATOR + propertiesForCurrentMetric.getMetricPath() + propertiesForCurrentMetric.getAlias();
-                metricValue = metric.getValue().multiply(new BigDecimal(propertiesForCurrentMetric.getMultiplier()));
-                if (propertiesForCurrentMetric.getDelta()) {
-                    metricValue = DELTA_CALCULATOR.calculateDelta(metricPath, metricValue);
-                }
-                aggregationType = propertiesForCurrentMetric.getAggregationType();
-                clusterRollupType = propertiesForCurrentMetric.getClusterRollupType();
-                timeRollupType = propertiesForCurrentMetric.getTimeRollupType();
-            }
-            if(metricValue != null) {
-                metricWriter.printMetric(metricPath, String.valueOf(metricValue), aggregationType, timeRollupType, clusterRollupType);
-            }
         }
     }
 }

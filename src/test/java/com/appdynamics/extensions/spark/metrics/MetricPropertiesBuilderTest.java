@@ -50,5 +50,4 @@ public class MetricPropertiesBuilderTest {
         Assert.assertTrue(properties.getMultiplier().equals(DEFAULT_MULTIPLIER));
         Assert.assertFalse(properties.getDelta());
     }
-
 }
