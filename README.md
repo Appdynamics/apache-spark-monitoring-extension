@@ -1,5 +1,4 @@
-# Apache-spark-monitoring-extension
-AppDynamics Machine Agent Extension for use with Apache Spark
+## AppDynamics Monitoring Extension for use with Apache Spark
 
 #### Use Case
 
@@ -33,8 +32,7 @@ As mentioned above, the Spark History Server is essential for metrics to persist
   </pre>
  3. Once this is done, use this property **--properties-file path_to_spark_defaults_conf/spark-defaults.conf** along with your spark-submit script. For example: 
   <pre>
-  ./bin/spark-submit --class <main-class> --master <master-url> --deploy-mode <deploy-mode> --conf <key>=<value> 
-  --properties-file <path_to_spark_defaults_conf/spark-defaults.conf>
+  ./bin/spark-submit xyz --properties-file <path_to_spark_defaults_conf/spark-defaults.conf>
  </pre>
  
  4. Repeat this for a worker node prior to deploying apps any apps on it. 
