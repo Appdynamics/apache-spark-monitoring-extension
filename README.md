@@ -32,7 +32,7 @@ As mentioned above, the Spark History Server is essential for metrics to persist
   </pre>
  3. Once this is done, use this property **--properties-file path_to_spark_defaults_conf/spark-defaults.conf** along with your spark-submit script. For example: 
   <pre>
-  ./bin/spark-submit xyz --properties-file <path_to_spark_defaults_conf/spark-defaults.conf>
+  ./bin/spark-submit xyz --properties-file path_to_spark_defaults_conf/spark-defaults.conf
  </pre>
  
  4. Repeat this for a worker node prior to deploying apps any apps on it. 
@@ -239,7 +239,7 @@ Please contact [help@appdynamics.com](mailto:help@appdynamics.com) with the fol
 
 <td style="text-align: right; width: 210px">Version</td>
 
-<td>1.6.0</td>
+<td>2.1.0</td>
 
 </tr>
 
@@ -248,14 +248,6 @@ Please contact [help@appdynamics.com](mailto:help@appdynamics.com) with the fol
 <td style="text-align: right">Machine Agent Compatibility</td>
 
 <td>4.0+</td>
-
-</tr>
-
-<tr>
-
-<td style="text-align: right">Last Update</td>
-
-<td>06/09/15</td>
 
 </tr>
 
