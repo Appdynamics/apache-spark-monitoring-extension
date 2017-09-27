@@ -6,12 +6,12 @@
 
     <groupId>apache-spark-monitoring-extension</groupId>
     <artifactId>apache-spark-monitoring-extension</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
-        <target.dir>${project.build.directory}/com.appdynamics.extensions.spark.SparkMonitor</target.dir>
+        <target.dir>${project.build.directory}/SparkMonitor</target.dir>
     </properties>
 
     <dependencies>
@@ -132,7 +132,7 @@
                                     <fileset dir="${build.directory}" includes="${project.artifactId}.${project.packaging}"/>
                                 </copy>
                                 <zip destfile="${target.dir}-${project.version}.zip">
-                                    <zipfileset dir="${target.dir}" filemode="755" prefix="com.appdynamics.extensions.spark.SparkMonitor/"/>
+                                    <zipfileset dir="${target.dir}" filemode="755" prefix="SparkMonitor/"/>
                                 </zip>
                                 <delete dir="${target.dir}"/>
                             </target>

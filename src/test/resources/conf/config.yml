@@ -23,7 +23,7 @@ metrics:
      executors:
         - rddBlocks:
             alias: "Number of persisted RDD blocks in the application's executors"
-            multiplier: "2"
+            multiplier: "2.0"
             cluster: "INDIVIDUAL"
             aggregation: "AVERAGE"
             time: "SUM"

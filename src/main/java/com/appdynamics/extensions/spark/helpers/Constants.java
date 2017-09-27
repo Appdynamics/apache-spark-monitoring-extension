@@ -20,5 +20,5 @@ public class Constants {
     public static final String DEFAULT_CLUSTER_ROLLUP_TYPE = "INDIVIDUAL";
     public static final String DEFAULT_TIME_ROLLUP_TYPE = "AVERAGE";
     public static final String DEFAULT_AGGREGATION_TYPE = "AVERAGE";
-    public static final String DEFAULT_MULTIPLIER = "1.0";
+    public static final String DEFAULT_MULTIPLIER = "1";
 }

@@ -11,6 +11,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Map;
 
 import static com.appdynamics.extensions.spark.helpers.Constants.*;
@@ -63,6 +64,7 @@ class SparkStats {
                 timeRollupType = propertiesForCurrentMetric.getTimeRollupType();
             }
             if(metricValue != null) {
+                metricValue = metricValue.setScale(0, RoundingMode.UP);
                 metricWriter.printMetric(metricPath, String.valueOf(metricValue), aggregationType, timeRollupType, clusterRollupType);
             }
         }
