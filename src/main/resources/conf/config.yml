@@ -1,3 +1,10 @@
+# Copyright [YEAR]. AppDynamics LLC and its affiliates.
+# All Rights Reserved.
+# This is unpublished proprietary source code of AppDynamics LLC and its affiliates.
+# The copyright notice above does not evidence any actual or intended publication of such source code.
+
+
+
 #This will publish metrics to one tier (highly recommended)
 #Instructions on how to retrieve the Component ID can be found in the Metric Path section of https://docs.appdynamics.com/display/PRO42/Build+a+Monitoring+Extension+Using+Java
 #For Controllers 4.2.10+, you can also use the tier name instead of the component ID.
@@ -5,9 +12,9 @@ metricPrefix: "Server|Component:<COMPONENT_ID>|Custom Metrics|Spark Monitor|"
 
 #Add your Spark History Servers here. Please refer to the extension docs for Spark history & event logging configuration details.
 servers:
-   - host: "localhost"
-     port: 18080
-     name: "Spark Master"
+   - host: ""
+     port:
+     name: ""
 
 
 #Generic metric prefix used to show metrics in AppDynamics (not recommended)
