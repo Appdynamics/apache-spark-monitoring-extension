@@ -80,11 +80,4 @@ public class SparkMonitor  extends AManagedMonitor {
     private static String getImplementationVersion() {
         return SparkMonitor.class.getPackage().getImplementationVersion();
     }
-
-    public static void main(String[] args) throws TaskExecutionException {
-        SparkMonitor sparkMonitor = new SparkMonitor();
-        Map<String, String> argsMap = new HashMap<String, String>();
-        argsMap.put("config-file", "/Users/aditya.jagtiani/repos/appdynamics/extensions/apache-spark-monitoring-extension/src/main/resources/conf/config.yml");
-        sparkMonitor.execute(argsMap, null);
-    }
 }

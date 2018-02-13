@@ -14,7 +14,7 @@
 
     <groupId>apache-spark-monitoring-extension</groupId>
     <artifactId>apache-spark-monitoring-extension</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.4</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,7 +27,7 @@
             <groupId>com.appdynamics</groupId>
             <artifactId>machine-agent</artifactId>
             <version>3.7.11</version>
-            <!--<scope>provided</scope>-->
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.appdynamics</groupId>
