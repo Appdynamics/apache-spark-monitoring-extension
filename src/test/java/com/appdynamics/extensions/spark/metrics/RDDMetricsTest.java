@@ -8,49 +8,72 @@
 
 package com.appdynamics.extensions.spark.metrics;
 
+import com.appdynamics.extensions.metrics.Metric;
+import com.appdynamics.extensions.util.MetricPathUtils;
 import com.appdynamics.extensions.yml.YmlReader;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+import static org.mockito.Mockito.*;
+
 /**
- * Created by aditya.jagtiani on 5/16/17.
+ * Created by aditya.jagtiani on 5/16/17, abhishek.saxena on 7/8/20.
  */
 
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(MetricPathUtils.class)
 public class RDDMetricsTest {
     private String applicationName;
     private List<JsonNode> rddFromApplication;
     private List<Map> rddMetricsFromCfg;
+    private String metricPrefix;
 
     @Before
     public void setup() throws IOException {
+        metricPrefix="Custom Metrics|Spark|";
         applicationName = "App1";
         ObjectMapper mapper = new ObjectMapper();
         rddFromApplication = Lists.newArrayList();
         rddFromApplication.add(mapper.readValue(new File("src/test/resources/rdd.json"), JsonNode.class));
-        Map<String, ?> config = YmlReader.readFromFile(new File("src/test/resources/conf/config.yml"));
+        Map<String, ?> config = YmlReader.readFromFile(new File("src/test/resources/conf/config_metrics.yml"));
         Map allMetrics = (Map) config.get("metrics");
         rddMetricsFromCfg = (List) allMetrics.get("rdd");
+
+        PowerMockito.mockStatic(MetricPathUtils.class);
     }
 
     @Test
-    public void populateMetricsTest() throws IOException {
-        RDDMetrics rddMetrics = new RDDMetrics(applicationName, rddFromApplication, rddMetricsFromCfg);
-        Map<String, BigDecimal> metrics = rddMetrics.populateMetrics();
+    public void populateMetricsTest() {
+        Map<String,String> metricMap = Maps.newHashMap();
+        RDDMetrics rddMetrics = new RDDMetrics(applicationName, rddFromApplication, rddMetricsFromCfg,metricPrefix);
+
+        when(MetricPathUtils.buildMetricPath(anyString(),anyString(),anyString(),anyString(),anyString())).thenReturn("Custom Metrics|Spark|App1|Rdd|rdd1");
+
+        List<Metric> metrics = rddMetrics.populateMetrics();
+
+        for (Metric metric: metrics){
+            metricMap.put(metric.getMetricPath(),metric.getMetricValue());
+        }
+
         Assert.assertTrue(metrics.size() == 2);
-        Assert.assertTrue(metrics.containsKey("Applications|App1|Jobs|rdd1|numPartitions"));
-        Assert.assertTrue(metrics.containsKey("Applications|App1|Jobs|rdd1|numCachedPartitions"));
-        Assert.assertTrue(metrics.get("Applications|App1|Jobs|rdd1|numPartitions").equals(new BigDecimal(2)));
-        Assert.assertTrue(metrics.get("Applications|App1|Jobs|rdd1|numCachedPartitions").equals(new BigDecimal(1)));
+        Assert.assertTrue(metricMap.containsKey("Custom Metrics|Spark|App1|Rdd|rdd1|Number of Partitions"));
+        Assert.assertTrue(metricMap.containsKey("Custom Metrics|Spark|App1|Rdd|rdd1|Number of Cached Partitions"));
+        Assert.assertTrue(metricMap.get("Custom Metrics|Spark|App1|Rdd|rdd1|Number of Partitions").equals("2"));
+        Assert.assertTrue(metricMap.get("Custom Metrics|Spark|App1|Rdd|rdd1|Number of Cached Partitions").equals("1"));
     }
 }
 
