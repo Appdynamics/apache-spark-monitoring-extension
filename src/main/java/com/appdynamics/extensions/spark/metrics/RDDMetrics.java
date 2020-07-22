@@ -1,5 +1,5 @@
 /*
- * Copyright 2018. AppDynamics LLC and its affiliates.
+ * Copyright 2020. AppDynamics LLC and its affiliates.
  * All Rights Reserved.
  * This is unpublished proprietary source code of AppDynamics LLC and its affiliates.
  * The copyright notice above does not evidence any actual or intended publication of such source code.
@@ -8,57 +8,61 @@
 
 package com.appdynamics.extensions.spark.metrics;
 
+import com.appdynamics.extensions.logging.ExtensionsLoggerFactory;
+import com.appdynamics.extensions.metrics.Metric;
 import com.appdynamics.extensions.spark.helpers.SparkUtils;
+import com.appdynamics.extensions.util.MetricPathUtils;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.google.common.collect.Maps;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.Lists;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import static com.appdynamics.extensions.spark.helpers.Constants.METRIC_SEPARATOR;
+import static com.appdynamics.extensions.spark.helpers.Constants.*;
 
 /**
- * Created by aditya.jagtiani on 5/9/17.
+ * Created by aditya.jagtiani on 5/9/17, abhishek.saxena on 7/8/20.
  */
 
 class RDDMetrics {
-
-    private static final Logger logger = LoggerFactory.getLogger(RDDMetrics.class);
-    private static final String ENTITY_TYPE = "RDD";
+    private static final Logger logger = ExtensionsLoggerFactory.getLogger(RDDMetrics.class);
     private String applicationName;
     private List<JsonNode> rddFromApplication;
     private List<Map> rddMetricsFromConfig;
+    private String metricPrefix;
+    private List<MetricProperties> sparkRddMetric;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
-    RDDMetrics(String applicationName, List<JsonNode> rddFromApplication, List<Map> rddMetricsFromConfig) {
+    RDDMetrics(String applicationName, List<JsonNode> rddFromApplication, List<Map> rddMetricsFromConfig, String metricPrefix) {
         this.applicationName = applicationName;
         this.rddFromApplication = rddFromApplication;
         this.rddMetricsFromConfig = rddMetricsFromConfig;
+        this.metricPrefix = metricPrefix;
     }
 
-    Map<String, BigDecimal> populateMetrics() throws IOException {
-        if (!SparkUtils.isValidationSuccessful(rddMetricsFromConfig, rddFromApplication, ENTITY_TYPE)) {
-            return Maps.newHashMap();
-        }
-        Map<String, BigDecimal> rddMetrics = Maps.newHashMap();
-        for (JsonNode rdd : rddFromApplication) {
-            String rddId = rdd.findValue("id").asText();
-            String currentRDDMetricPath = "Applications" + METRIC_SEPARATOR + applicationName + METRIC_SEPARATOR + "Jobs" + METRIC_SEPARATOR + rddId + METRIC_SEPARATOR;
-            logger.info("Fetching metrics for RDD: " + rddId + " in application: " + applicationName);
-            for (Map metric : rddMetricsFromConfig) {
-                Map.Entry<String, String> entry = (Map.Entry) metric.entrySet().iterator().next();
-                String metricName = entry.getKey();
-                if (rdd.findValue(metricName) != null) {
-                    rddMetrics.put(currentRDDMetricPath + metricName, SparkUtils.convertDoubleToBigDecimal(rdd.findValue(metricName).asDouble()));
-                    if (entry.getValue() != null) {
-                        MetricPropertiesBuilder.buildMetricPropsMap(metric, metricName, currentRDDMetricPath);
+    List<Metric> populateMetrics() {
+        List<Metric> rddMetrics = Lists.newArrayList();
+        if (SparkUtils.isValidationSuccessful(rddMetricsFromConfig, rddFromApplication, RDD)) {
+            try {
+                String metricName;
+                sparkRddMetric = Arrays.asList(objectMapper.convertValue(rddMetricsFromConfig, MetricProperties[].class));
+                for (JsonNode rdd : rddFromApplication) {
+                    String rddId = rdd.findValue("id").asText();
+                    String currentRDDMetricPath = MetricPathUtils.buildMetricPath(metricPrefix, APPLICATIONS, applicationName, RDD, rddId);
+                    logger.info("Fetching metrics for RDD: " + rddId + " in application: " + applicationName);
+                    for (MetricProperties metrics : sparkRddMetric) {
+                        metricName = metrics.getName();
+                        if (rdd.findValue(metricName) != null) {
+                            rddMetrics.add(new Metric(metricName, String.valueOf(rdd.findValue(metricName)), currentRDDMetricPath + METRIC_SEPARATOR + metrics.getAlias(), objectMapper.convertValue(metrics, Map.class)));
+                        } else {
+                            logger.debug("Metric :" + metricName + " not found for RDD : " + rddId + ". Please verify whether correct metric names have been entered in the config.yml");
+                        }
                     }
-                } else {
-                    logger.debug("Metric :" + metricName + " not found for RDD : " + rddId + ". Please verify whether correct metric names have been entered in the config.yml");
                 }
+            } catch (Exception ex) {
+                logger.error("Error occurred while fetching metrics for rdd", ex);
             }
         }
         return rddMetrics;

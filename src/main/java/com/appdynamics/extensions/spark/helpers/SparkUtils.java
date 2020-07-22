@@ -1,5 +1,5 @@
 /*
- * Copyright 2018. AppDynamics LLC and its affiliates.
+ * Copyright 2020. AppDynamics LLC and its affiliates.
  * All Rights Reserved.
  * This is unpublished proprietary source code of AppDynamics LLC and its affiliates.
  * The copyright notice above does not evidence any actual or intended publication of such source code.
@@ -8,6 +8,7 @@
 
 package com.appdynamics.extensions.spark.helpers;
 
+import com.appdynamics.extensions.logging.ExtensionsLoggerFactory;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -20,24 +21,12 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Created by aditya.jagtiani, abhishek.saxena on 08/July/2020.
+ */
+
 public class SparkUtils {
-    private static final Logger logger = LoggerFactory.getLogger(SparkUtils.class);
-    public static JsonNode getJsonNode(CloseableHttpResponse response) throws IOException {
-        String data = EntityUtils.toString(response.getEntity(), "UTF-8");
-        return getJsonNode(data);
-    }
-
-    private static JsonNode getJsonNode(String data) throws IOException {
-        if (data == null) {
-            return null;
-        }
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(data, JsonNode.class);
-    }
-
-    public static BigDecimal convertDoubleToBigDecimal(Double value) {
-        return new BigDecimal(Math.round(value));
-    }
+    private static final Logger logger = ExtensionsLoggerFactory.getLogger(SparkUtils.class);
 
     public static boolean isValidationSuccessful(List<Map> configuredMetrics, List<JsonNode> sparkEntitiesInApplication, String entityType) {
         if (configuredMetrics == null || configuredMetrics.isEmpty()) {
