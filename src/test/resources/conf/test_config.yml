@@ -3,20 +3,18 @@
 # This is unpublished proprietary source code of AppDynamics LLC and its affiliates.
 # The copyright notice above does not evidence any actual or intended publication of such source code.
 
-#Generic metric prefix used to show metrics in AppDynamics (not recommended)
+#Metric prefix used when SIM is enabled for your machine agent
 metricPrefix: "Custom Metrics|Spark|"
 
-#This will publish metrics to one tier (highly recommended)
-#Instructions on how to retrieve the Component ID can be found in the Metric Path section of https://docs.appdynamics.com/display/PRO42/Build+a+Monitoring+Extension+Using+Java
-#For Controllers 4.2.10+, you can also use the tier name instead of the component ID.
-#metricPrefix: "Server|Component:18|Custom Metrics|Spark Monitor|"
+#This will publish metrics to specific tier
+#Instructions on how to retrieve the Component ID can be found in the Metric Prefix section of https://community.appdynamics.com/t5/Knowledge-Base/How-do-I-troubleshoot-missing-custom-metrics-or-extensions/ta-p/28695
+#metricPrefix: "Server|Component:<COMPONENT OR TIER ID>|Custom Metrics|Spark Monitor|"
 
 #Add your Spark History Servers here. Please refer to the extension docs for Spark history & event logging configuration details.
 servers:
   - host: "localhost"
     port: 18080
     name: "Myspark"
-
 
 numberOfThreads: 5
 
@@ -365,5 +363,3 @@ controllerInfo:
 
 #Encryption key for your controllerInfo password
 encryptionKey: "abcd"
-
-enableHealthChecks: false
