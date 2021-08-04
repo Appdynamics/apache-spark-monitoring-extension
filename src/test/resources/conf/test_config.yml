@@ -1,0 +1,365 @@
+# Copyright 2018. AppDynamics LLC and its affiliates.
+# All Rights Reserved.
+# This is unpublished proprietary source code of AppDynamics LLC and its affiliates.
+# The copyright notice above does not evidence any actual or intended publication of such source code.
+
+#Metric prefix used when SIM is enabled for your machine agent
+metricPrefix: "Custom Metrics|Spark|"
+
+#This will publish metrics to specific tier
+#Instructions on how to retrieve the Component ID can be found in the Metric Prefix section of https://community.appdynamics.com/t5/Knowledge-Base/How-do-I-troubleshoot-missing-custom-metrics-or-extensions/ta-p/28695
+#metricPrefix: "Server|Component:<COMPONENT OR TIER ID>|Custom Metrics|Spark Monitor|"
+
+#Add your Spark History Servers here. Please refer to the extension docs for Spark history & event logging configuration details.
+servers:
+  - host: "localhost"
+    port: 18080
+    name: "Myspark"
+
+numberOfThreads: 5
+
+## This section can be used to configure metrics published by the extension. You have the ability to add multipliers & modify the metric qualifiers for each metric.
+## Valid 'cluster' rollup values: INDIVIDUAL, COLLECTIVE
+## Valid 'aggregation' types: AVERAGE, SUM, OBSERVATION
+## Valid 'time' rollup types: AVERAGE, SUM, CURRENT
+## You can choose to not add any or all of these fields to any metric and the default values for each of the above will be used (INDIVIDUAL, AVERAGE & AVERAGE for cluster, aggregation & time respectively).
+metrics:
+  jobs:
+    - name: "numTasks"
+      alias: "Num Tasks"  #Number of tasks in the application
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numCompletedTasks"
+      alias: "Num Completed Tasks"  #Number of completed tasks in the application
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numSkippedTasks"
+      alias: "Num Skipped Tasks"  #Number of completed tasks in the application"
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numFailedTasks"
+      alias: "Num Failed Tasks"  #Number of completed tasks in the application
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numActiveStages"
+      alias: "Num Active Stages"  #Number of active stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numCompletedStages"
+      alias: "Num Completed Stages"  #Number of completed stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numSkippedStages"
+      alias: "Num Skipped Stages"  #Number of completed stages"
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numFailedStages"
+      alias: "Num Failed Stages"  #Number of failed stages"
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+  stages:
+    - name: "numActiveTasks"
+      alias: "Num Active Tasks"  #Number of active tasks in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numCompleteTasks"
+      alias: "Num Complete Tasks"  #Number of complete tasks in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numFailedTasks"
+      alias: "Num Failed Tasks"  #Number of failed tasks in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "executorRunTime"
+      alias: "Executor Run Time"  #Time spent by executor in the application's stages (ms)
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "inputBytes"
+      alias: "Input Bytes"  #Input bytes in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "inputRecords"
+      alias: "Input Records"  #Input records in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "outputBytes"
+      alias: "Output Bytes"  #Output bytes in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "outputRecords"
+      alias: "Output Records"  #Output records in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "shuffleReadBytes"
+      alias: "Shuffle Read Bytes"  #Number of bytes read during a shuffle in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "shuffleReadRecords"
+      alias: "Shuffle Read Records"  #Number of records read during a shuffle in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "shuffleWriteBytes"
+      alias: "Shuffle Write Bytes"  #Number of bytes written during a shuffle in an application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "shuffleWriteRecords"
+      alias: "Shuffle Write Records"  #Number of shuffled records in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "memoryBytesSpilled"
+      alias: "Memory Bytes Spilled"  #Number of bytes spilled to disk in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "diskBytesSpilled"
+      alias: "Disk Bytes Spilled"  #Max size on disk of the spilled bytes in the application's stages
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+  executors:
+    - name: "rddBlocks"
+      alias: "Rdd Blocks"  #Number of persisted RDD blocks in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "memoryUsed"
+      alias: "Memory Used" #Amount of memory used for cached RDDs in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "diskUsed"
+      alias: "Disk Used" #Amount of disk space used by persisted RDDs in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "activeTasks"
+      alias: "Active Tasks" #Number of active tasks in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "failedTasks"
+      alias: "Failed Tasks" #Number of failed tasks in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "completedTasks"
+      alias: "Completed Tasks" #Number of completed tasks in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "totalTasks"
+      alias: "Total Tasks" #Total number of tasks in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "totalDuration"
+      alias: "Total Duration" #Time spent by the application's executors executing tasks (ms)
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "totalInputBytes"
+      alias: "totalInputBytes" #Total number of input bytes in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "totalShuffleRead"
+      alias: "Total Shuffle Read" #Total number of bytes read during a shuffle in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "totalShuffleWrite"
+      alias: "Total Shuffle Write"  #Total number of shuffled bytes in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "maxMemory"
+      alias: "Max Memory" #Maximum memory available for caching RDD blocks in the application's executors
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+  rdd:
+    - name: "numPartitions"
+      alias: "Num Partitions" #Number of persisted RDD partitions in the application/second
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "numCachedPartitions"
+      alias: "Num Cached Partitions" #Number of in-memory cached RDD partitions in the application/second
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "memoryUsed"
+      alias: "Memory Used" #Amount of memory used in the application's persisted RDDs
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+    - name: "diskUsed"
+      alias: "Disk Used"  #Amount of disk space used by persisted RDDs in the application
+      multiplier: "1"
+      aggregationType: "AVERAGE"
+      timeRollUpType: "AVERAGE"
+      clusterRollUpType: "INDIVIDUAL"
+      delta: "false"
+
+
+metricPathReplacements:
+  - replace: "|"
+    replaceWith: "="
+  - replace: ":"
+    replaceWith: ";"
+  - replace: ","
+    replaceWith: "$"
+
+# If any of the following fields are not set, the values of the specific fields are set from the system properties of the corresponding fields as specified in the comments.
+# If the system properties are not set for the field, then the data is retrieved from machine agent configFile. Please refer to ControllerInfoFactory for more details.
+# Values provided here can be overridden if the same field is configured in either controller-info.xml or system properties.
+controllerInfo:
+  controllerHost: ""  # -Dappdynamics.controller.hostName
+  controllerPort:  # -Dappdynamics.controller.port
+  controllerSslEnabled: false # -Dappdynamics.controller.ssl.enabled
+  enableOrchestration: false # N/A
+  uniqueHostId: "" # -Dappdynamics.agent.uniqueHostId
+  username: "admin" # -Dappdynamics.agent.monitors.controller.username
+  password: "" # -Dappdynamics.agent.monitors.controller.password
+  encryptedPassword: "j+0oxTzUtw2xAdaq4UUq/Q==" # -Dappdynamics.agent.monitors.controller.encryptedPassword
+  accountAccessKey: "" # -Dappdynamics.agent.accountAccessKey
+  account: "" # -Dappdynamics.agent.accountName
+  machinePath: "" # -Dappdynamics.machine.agent.hierarchyPath
+  simEnabled: false # -Dappdynamics.sim.enabled
+  applicationName: "" # -Dappdynamics.agent.applicationName
+  tierName: "" # -Dappdynamics.agent.tierName
+  nodeName: "" # -Dappdynamics.agent.nodeName
+
+#Encryption key for your controllerInfo password
+encryptionKey: "abcd"

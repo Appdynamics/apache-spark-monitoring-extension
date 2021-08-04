@@ -1,5 +1,5 @@
 /*
- * Copyright 2018. AppDynamics LLC and its affiliates.
+ * Copyright 2020. AppDynamics LLC and its affiliates.
  * All Rights Reserved.
  * This is unpublished proprietary source code of AppDynamics LLC and its affiliates.
  * The copyright notice above does not evidence any actual or intended publication of such source code.
@@ -8,18 +8,20 @@
 
 package com.appdynamics.extensions.spark.metrics;
 
+import java.util.Map;
+
 /**
- * Created by aditya.jagtiani on 5/15/17.
+ * Created by aditya.jagtiani on 5/15/17, abhishek.saxena on 7/8/20.
  */
 public class MetricProperties {
-    private String metricName;
+    private String name;
     private String alias;
     private String aggregationType;
-    private String timeRollupType;
-    private String clusterRollupType;
+    private String timeRollUpType;
+    private String clusterRollUpType;
     private String multiplier;
-    private String metricPath;
     private boolean delta;
+    private Map convert;
 
     public String getAlias() {
         return alias;
@@ -29,12 +31,12 @@ public class MetricProperties {
         this.alias = alias;
     }
 
-    String getMetricName() {
-        return metricName;
+    String getName() {
+        return name;
     }
 
-    void setMetricName(String metricName) {
-        this.metricName = metricName;
+    void setName(String name) {
+        this.name = name;
     }
 
     public String getAggregationType() {
@@ -45,20 +47,20 @@ public class MetricProperties {
         this.aggregationType = aggregationType;
     }
 
-    public String getTimeRollupType() {
-        return timeRollupType;
+    public String getTimeRollUpType() {
+        return timeRollUpType;
     }
 
-    void setTimeRollupType(String timeRollupType) {
-        this.timeRollupType = timeRollupType;
+    void setTimeRollUpType(String timeRollUpType) {
+        this.timeRollUpType = timeRollUpType;
     }
 
-    public String getClusterRollupType() {
-        return clusterRollupType;
+    public String getClusterRollUpType() {
+        return clusterRollUpType;
     }
 
-    void setClusterRollupType(String clusterRollupType) {
-        this.clusterRollupType = clusterRollupType;
+    void setClusterRollUpType(String clusterRollUpType) {
+        this.clusterRollUpType = clusterRollUpType;
     }
 
     public String getMultiplier() {
@@ -69,18 +71,19 @@ public class MetricProperties {
         this.multiplier = multiplier;
     }
 
-    void setMetricPath(String metricPath) {
-        this.metricPath = metricPath;
-    }
-    public String getMetricPath() {
-        return metricPath;
-    }
-
     void setDelta(boolean delta) {
         this.delta = delta;
     }
 
     public boolean getDelta() {
         return delta;
+    }
+
+    public Map getConvert() {
+        return convert;
+    }
+
+    public void setConvert(Map convert) {
+        this.convert = convert;
     }
 }
