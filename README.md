@@ -60,7 +60,7 @@ Please follow section 2.1 of the [Document](https://community.appdynamics.com/t5
 
 #This will publish metrics to specific tier
 #Instructions on how to retrieve the Component ID can be found in the Metric Prefix section of https://community.appdynamics.com/t5/Knowledge-Base/How-do-I-troubleshoot-missing-custom-metrics-or-extensions/ta-p/28695
-metricPrefix: "Server|Component:<COMPONENT OR TIER ID>|Custom Metrics|Spark Monitor|"
+metricPrefix: "Server|Component:&lt;COMPONENT OR TIER ID&gt;|Custom Metrics|Spark Monitor|"
 </pre>
 
 #### Spark history server configuration
@@ -87,9 +87,9 @@ servers:
 </pre>
 
 #### Number of threads
-Always include one thread per server + 1.
+Always include: (one thread per server + Number of applications you are monitoring in that server) + 1 (to run main task).
 
-For example, if you have 4 spark history servers configured, then number of threads required are 5 (4 thread per server + 1 to run main task)
+For example, if you have 2 spark history servers configured and 2 application in one server and 3 application in another server, then number of threads required are 8 ((1 + 2) for first server + (1 + 3) for second server + 1 thread to run main task)
 
 #### Configure metric section
 
@@ -100,6 +100,9 @@ The metrics shown in the file are customizable. You can choose to remove metrics
 4. clusterRollUpType: The cluster-rollup qualifier specifies how the Controller aggregates metric values in a tier (a cluster of nodes). The value is an enumerated type. Valid values are **INDIVIDUAL** (default) or **COLLECTIVE**. 
 5. aggregationType: The aggregator qualifier specifies how the Machine Agent aggregates the values reported during a one-minute period. Valid values are **AVERAGE** (default) or **SUM** or **OBSERVATION**. 
 6. timeRollUpType: The time-rollup qualifier specifies how the Controller rolls up the values when it converts from one-minute granularity tables to 10-minute granularity and 60-minute granularity tables over time. Valid values are **AVERAGE** (default) or **SUM** or **CURRENT**. 
+7. convert: Used to report a metric that is reporting text value by converting the value to its mapped integer
+
+More details around this can be found [here](https://community.appdynamics.com/t5/Knowledge-Base/Extensions-Commons-Library-Metric-Transformers/ta-p/35413)
 <pre>
 ## This section can be used to configure metrics published by the extension. You have the ability to add multipliers & modify the metric qualifiers for each metric.
 ## Valid 'cluster' rollup values: INDIVIDUAL, COLLECTIVE
@@ -489,4 +492,4 @@ Always feel free to fork and contribute any changes directly via [GitHub](https:
 |Controller Compatibility  |4.5 or Later|
 |Machine Agent Version     |4.5.13+     |
 |Product Tested on         |3.0.0       |
-|Last Update               |30/07/2021  |
+|Last Update               |04/08/2021  |

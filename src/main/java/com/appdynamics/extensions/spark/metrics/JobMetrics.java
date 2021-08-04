@@ -44,7 +44,7 @@ class JobMetrics {
 
     List<Metric> populateMetrics() {
         List<Metric> jobMetrics = Lists.newArrayList();
-        if (SparkUtils.isValidationSuccessful(jobMetricsFromConfig, jobsFromApplication, JOBS)) {
+        if (SparkUtils.validateEntityInApplication(applicationName, jobsFromApplication, JOBS)) {
             try {
                 String metricName;
                 sparkJobMetric = Arrays.asList(objectMapper.convertValue(jobMetricsFromConfig, MetricProperties[].class));

@@ -17,17 +17,17 @@ import com.appdynamics.extensions.MetricWriteHelper;
 import com.appdynamics.extensions.conf.MonitorContextConfiguration;
 import com.appdynamics.extensions.http.UrlBuilder;
 import com.appdynamics.extensions.logging.ExtensionsLoggerFactory;
-import com.appdynamics.extensions.metrics.Metric;
 import com.appdynamics.extensions.spark.metrics.*;
-import com.google.common.collect.Lists;
-import org.apache.http.impl.client.CloseableHttpClient;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Phaser;
 
 import static com.appdynamics.extensions.spark.helpers.Constants.*;
+import static com.appdynamics.extensions.spark.helpers.SparkUtils.*;
 
 public class SparkMonitorTask implements AMonitorTaskRunnable {
 
@@ -37,43 +37,44 @@ public class SparkMonitorTask implements AMonitorTaskRunnable {
     private MonitorContextConfiguration contextConfiguration;
     private Map server;
     private String metricPrefix;
-    private String serverURL;
-    private BigInteger heartbeatvalue = BigInteger.ZERO;
+    private String serverUrl;
+    private BigInteger heartbeatValue = BigInteger.ZERO;
 
 
     public SparkMonitorTask(MetricWriteHelper metricWriteHelper, MonitorContextConfiguration contextConfiguration, Map server){
         this.metricWriteHelper = metricWriteHelper;
         this.contextConfiguration = contextConfiguration;
         this.server = server;
-        this.serverURL = UrlBuilder.fromYmlServerConfig(server).build();
+        this.serverUrl = UrlBuilder.fromYmlServerConfig(server).build();
         this.metricPrefix = contextConfiguration.getMetricPrefix()+METRIC_SEPARATOR+this.server.get(DISPLAY_NAME)+ METRIC_SEPARATOR;
     }
 
 
-    public void onTaskComplete() {
-        logger.info("Completed spark monitor task for server "+server.get(DISPLAY_NAME));
-    }
-
-
     public void run() {
-        List<Metric> sparkMetrics = Lists.newArrayList();
         try {
-            sparkMetrics = populateMetrics();
+            Phaser phaser = new Phaser();
+            phaser.register();
+            String baseUrl = buildUrl(serverUrl, CONTEXT_ROOT);
+            List<JsonNode> applications = fetchSparkEntity(contextConfiguration.getContext().getHttpClient(), baseUrl);
+            if(validateAppResponse(applications)){
+                heartbeatValue = BigInteger.ONE;
+                for(JsonNode application: applications){
+                    String applicationName = application.findValue("name").asText();
+                    String applicationId = application.findValue("id").asText();
+                    ApplicationMetricHandler applicationMetricHandlerTask = new ApplicationMetricHandler(metricWriteHelper, contextConfiguration.getContext().getHttpClient(), (Map) contextConfiguration.getConfigYml().get(METRICS), metricPrefix, baseUrl, applicationName, applicationId, phaser);
+                    contextConfiguration.getContext().getExecutorService().execute("ApplicationMetricHandlerTask",applicationMetricHandlerTask);
+                }
+            }
+            phaser.arriveAndAwaitAdvance();
+            logger.debug("SparkMonitorTask completed for server "+server.get(DISPLAY_NAME));
         } catch (Exception ex) {
-            logger.error("Error while running the task", ex);
+            logger.error("Error while running the task for server "+server.get(DISPLAY_NAME), ex);
         }finally{
-            sparkMetrics.add(new Metric(HEARTBEAT, heartbeatvalue.toString(), metricPrefix + HEARTBEAT));
-            metricWriteHelper.transformAndPrintMetrics(sparkMetrics);
+            metricWriteHelper.printMetric(metricPrefix + HEARTBEAT, heartbeatValue.toString(), "AVERAGE", "AVERAGE", "INDIVIDUAL" );
         }
     }
 
-    private List<Metric> populateMetrics() {
-        List<Metric> sparkMetrics = Lists.newArrayList();
-        CloseableHttpClient httpClient = contextConfiguration.getContext().getHttpClient();
-        Map<String,?> config = contextConfiguration.getConfigYml();
-        ApplicationMetricHandler applicationMetricHandler = new ApplicationMetricHandler(serverURL,httpClient,metricPrefix);
-        sparkMetrics.addAll(applicationMetricHandler.populateStats((Map) config.get(METRICS)));
-        heartbeatvalue = applicationMetricHandler.getHeartbeatValue();
-        return sparkMetrics;
+    public void onTaskComplete() {
+        logger.info("Completed spark monitor task for server "+server.get(DISPLAY_NAME));
     }
 }

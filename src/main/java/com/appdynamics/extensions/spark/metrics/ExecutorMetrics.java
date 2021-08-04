@@ -45,7 +45,7 @@ class ExecutorMetrics {
 
     protected List<Metric> populateMetrics() {
         List<Metric> executorMetrics = Lists.newArrayList();
-        if (SparkUtils.isValidationSuccessful(executorMetricsFromConfig, executorsFromApplication, EXECUTORS)) {
+        if (SparkUtils.validateEntityInApplication(applicationName, executorsFromApplication, EXECUTORS)) {
             try {
                 String metricName;
                 sparkExecutorMetric = Arrays.asList(objectMapper.convertValue(executorMetricsFromConfig, MetricProperties[].class));

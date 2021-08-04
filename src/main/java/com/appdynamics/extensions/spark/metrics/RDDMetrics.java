@@ -44,7 +44,7 @@ class RDDMetrics {
 
     List<Metric> populateMetrics() {
         List<Metric> rddMetrics = Lists.newArrayList();
-        if (SparkUtils.isValidationSuccessful(rddMetricsFromConfig, rddFromApplication, RDD)) {
+        if (SparkUtils.validateEntityInApplication(applicationName, rddFromApplication, RDD)) {
             try {
                 String metricName;
                 sparkRddMetric = Arrays.asList(objectMapper.convertValue(rddMetricsFromConfig, MetricProperties[].class));

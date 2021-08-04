@@ -44,7 +44,7 @@ class StageMetrics {
 
     List<Metric> populateMetrics() {
         List<Metric> stageMetrics = Lists.newArrayList();
-        if (SparkUtils.isValidationSuccessful(stageMetricsFromConfig, stagesFromApplication, STAGES)) {
+        if (SparkUtils.validateEntityInApplication(applicationName, stagesFromApplication, STAGES)) {
             try {
                 String metricName;
                 sparkStageMetric = Arrays.asList(objectMapper.convertValue(stageMetricsFromConfig, MetricProperties[].class));
