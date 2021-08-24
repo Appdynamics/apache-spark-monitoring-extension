@@ -464,7 +464,7 @@ For e.g.
 
 ```
 
-##Contributing
+## Contributing
 
 Always feel free to fork and contribute any changes directly via [GitHub](https://github.com/Appdynamics/apache-spark-monitoring-extension).
 
