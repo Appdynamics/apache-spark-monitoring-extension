@@ -15,7 +15,7 @@ The AppDynamics Spark Extension can monitor multiple Spark clusters and worker n
 5. More general Spark related information can be found on the Spark homepage - http://spark.apache.org/docs/3.0.0/ 
 
 ## Installation
-1. Run "mvn clean install"
+1. Run "mvn clean install" from "ApacheSparkRepo"
 1. Unzip the contents of SparkMonitor-\<version\>.zip file (&lt;ApacheSparkRepo&gt; / targets) and copy the directory to `<your-machine-agent-dir>/monitors`.
 2. Edit config.yml file and provide the required configuration (see Configuration section)
 3. Restart the Machine Agent.
@@ -420,7 +420,7 @@ metrics:
 </pre>
 
 #### Yml Validation
-Please copy all the contents of the config.yml file and go to http://www.yamllint.com/ . On reaching the website, paste the contents and press the “Go” button on the bottom left.
+Please copy all the contents of the config.yml file and go [here](https://jsonformatter.org/yaml-validator) . On reaching the website, paste the contents and press the “Validate YAML” button.
 
 ## Workbench
 
@@ -473,7 +473,9 @@ Always feel free to fork and contribute any changes directly via [GitHub](https:
 |          Name            |  Version   |
 |--------------------------|------------|
 |Extension Version         |1.2.0       |
-|Controller Compatibility  |4.5 or Later|
-|Machine Agent Version     |4.5.13+     |
 |Product Tested on         |3.0.0       |
 |Last Update               |04/08/2021  |
+|ChangeList|[ChangeLog](https://github.com/Appdynamics/apache-spark-monitoring-extension/blob/master/CHANGELOG.md)|
+
+**Note**: While extensions are maintained and supported by customers under the open-source licensing model, they interact with agents and Controllers that are subject to [AppDynamics’ maintenance and support policy](https://docs.appdynamics.com/latest/en/product-and-release-announcements/maintenance-support-for-software-versions). Some extensions have been tested with AppDynamics 4.5.13+ artifacts, but you are strongly recommended against using versions that are no longer supported.
+
