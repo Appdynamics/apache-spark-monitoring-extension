@@ -9,16 +9,18 @@ The AppDynamics Spark Extension can monitor multiple Spark clusters and worker n
 ## Prerequisites
 
 1. Before the extension is installed, the prerequisites mentioned [here](https://community.appdynamics.com/t5/Knowledge-Base/Extensions-Prerequisites-Guide/ta-p/35213) need to be met. Please do not proceed with the extension installation if the specified prerequisites are not met 
-2. This extension will fetch metrics from Spark applications running in a cluster setup. Spark application metrics persist only as long as the application is alive, which makes it essential to have a repository or metric dump which stores these metrics even after the application has been terminated. 
-3. Spark offers a number of metric dumps - REST, JMX, CSV etc. This extension uses a REST dump in the form of a Spark History Server. Please refer to the next section for instructions on how to configure and use the History Server. 
-4. The extension needs to be able to connect to spark history server in order to collect and send metrics. To do this, you will have to either establish a remote connection in between the extension and the product, or have an agent on the same machine running the product in order for the extension to collect and send the metrics.  
-5. More general Spark related information can be found on the Spark homepage - http://spark.apache.org/docs/3.0.0/ 
+2. Download and install [Apache Maven](https://maven.apache.org/) which is configured with `Java 8` to build the extension artifact from source. You can check the java version used in maven using command `mvn -v` or `mvn --version`. If your maven is using some other java version then please download java 8 for your platform and set JAVA_HOME parameter before starting maven.
+3. This extension will fetch metrics from Spark applications running in a cluster setup. Spark application metrics persist only as long as the application is alive, which makes it essential to have a repository or metric dump which stores these metrics even after the application has been terminated. 
+4. Spark offers a number of metric dumps - REST, JMX, CSV etc. This extension uses a REST dump in the form of a Spark History Server. Please refer to the next section for instructions on how to configure and use the History Server. 
+5. The extension needs to be able to connect to spark history server in order to collect and send metrics. To do this, you will have to either establish a remote connection in between the extension and the product, or have an agent on the same machine running the product in order for the extension to collect and send the metrics.  
+6. More general Spark related information can be found on the Spark homepage - http://spark.apache.org/docs/3.0.0/ 
 
 ## Installation
-1. Run "mvn clean install" from "ApacheSparkRepo"
-1. Unzip the contents of SparkMonitor-\<version\>.zip file (&lt;ApacheSparkRepo&gt; / targets) and copy the directory to `<your-machine-agent-dir>/monitors`.
-2. Edit config.yml file and provide the required configuration (see Configuration section)
-3. Restart the Machine Agent.
+1. Clone the "apache-spark-monitoring-extension" repo using `git clone <repoUrl>` command.
+2. Run "mvn clean install" from "apache-spark-monitoring-extension"
+3. Unzip the contents of SparkMonitor-\<version\>.zip file (&lt;ApacheSparkRepo&gt; / targets) and copy the directory to `<your-machine-agent-dir>/monitors`.
+4. Edit config.yml file and provide the required configuration (see Configuration section)
+5. Restart the Machine Agent.
 
 Please place the extension in the **"monitors"** directory of your **Machine Agent** installation directory. Do not place the extension in the **"extensions"** directory of your **Machine Agent** installation directory.
 
