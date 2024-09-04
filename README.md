@@ -472,12 +472,12 @@ Always feel free to fork and contribute any changes directly via [GitHub](https:
 
 ## Version
 
-|          Name            |  Version   |
-|--------------------------|------------|
-|Extension Version         |1.2.0       |
-|Product Tested on         |3.0.0       |
-|Last Update               |04/08/2021  |
-|ChangeList|[ChangeLog](https://github.com/Appdynamics/apache-spark-monitoring-extension/blob/master/CHANGELOG.md)|
+|          Name            | Version                                                                                                |
+|--------------------------|--------------------------------------------------------------------------------------------------------|
+|Extension Version         | 1.2.1                                                                                                  |
+|Product Tested on         | Apache spark 3.5.2                                                                                     |
+|Last Update               | 08/29/2024                                                                                             |
+|ChangeList| [ChangeLog](https://github.com/Appdynamics/apache-spark-monitoring-extension/blob/master/CHANGELOG.md) |
 
 **Note**: While extensions are maintained and supported by customers under the open-source licensing model, they interact with agents and Controllers that are subject to [AppDynamics’ maintenance and support policy](https://docs.appdynamics.com/latest/en/product-and-release-announcements/maintenance-support-for-software-versions). Some extensions have been tested with AppDynamics 4.5.13+ artifacts, but you are strongly recommended against using versions that are no longer supported.
 
